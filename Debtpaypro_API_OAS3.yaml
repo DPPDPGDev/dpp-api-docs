@@ -955,7 +955,7 @@ paths:
       summary: contacts smslog
       tags: []
       operationId: get-contacts-contact_id-smslog
-      description: ''
+      description: 'SMS logs for contact implementing pagination '
       requestBody:
         content:
           application/json:
@@ -970,7 +970,15 @@ paths:
                 value:
                   start: 0
                   limit: 3
-        description: ''
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/SMS'
+            examples: {}
+          text/html:
+            schema:
+              type: object
+              properties: {}
+        description: two paraments start and limit if nothing is passed start should be 0 and limit 100
       responses:
         '200':
           $ref: '#/components/responses/default'
