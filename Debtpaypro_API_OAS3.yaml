@@ -915,6 +915,65 @@ paths:
                     items:
                       $ref: '#/components/schemas/Settlement'
                 type: object
+  '/contacts/{contact_id}/get_credit_report':
+    get:
+      tags:
+        - Contacts
+      summary: Get Last Credit Report
+      operationId: contactCreditReport
+      parameters:
+        - name: contact_id
+          in: path
+          description: Id of contact
+          required: true
+          schema:
+            type: integer
+      responses:
+        default:
+          description: default
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    $ref: '#/components/schemas/Status'
+                  response:
+                    description: Get Last Credit Report
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Debt'
+                type: object
+  '/contacts/{contact_id}/smslog':
+    parameters:
+      - schema:
+          type: integer
+        name: contact_id
+        in: path
+        required: true
+        description: contact_id
+    get:
+      summary: contacts smslog
+      tags: []
+      operationId: get-contacts-contact_id-smslog
+      description: ''
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SMS'
+            examples:
+              second log:
+                value:
+                  start: 1
+                  limit: 1
+              3 logs:
+                value:
+                  start: 0
+                  limit: 3
+        description: ''
+      responses:
+        '200':
+          $ref: '#/components/responses/default'
   /contacts/getLists:
     post:
       tags:
@@ -983,34 +1042,6 @@ paths:
                         description: Pull Credit Report on a contact
                         type: string
                     type: object
-                type: object
-  '/contacts/{contact_id}/get_credit_report':
-    get:
-      tags:
-        - Contacts
-      summary: Get Last Credit Report
-      operationId: contactCreditReport
-      parameters:
-        - name: contact_id
-          in: path
-          description: Id of contact
-          required: true
-          schema:
-            type: integer
-      responses:
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    description: Get Last Credit Report
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Debt'
                 type: object
   '/contacts/{contact_id}/submit_to_lender/{lender}':
     post:
@@ -3966,6 +3997,45 @@ components:
           example: 0
         recording_id:
           type: integer
+    SMS:
+      title: SMS
+      type: object
+      properties:
+        id:
+          type:
+            - integer
+            - string
+        sdate:
+          type: string
+        body:
+          type: string
+        status:
+          type: string
+          nullable: true
+        receiver:
+          type: string
+        sender:
+          type: string
+        flag:
+          type: string
+        schedule_id:
+          type:
+            - string
+            - integer
+        receiver_phone_number:
+          type:
+            - string
+            - number
+            - integer
+        title:
+          type: string
+          nullable: true
+        from_number:
+          type:
+            - string
+            - integer
+            - number
+      description: 'SMS object for contacts SMS '
   responses:
     ErrorResponse:
       description: Error Response
