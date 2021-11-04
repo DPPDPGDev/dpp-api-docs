@@ -943,19 +943,19 @@ paths:
                     items:
                       $ref: '#/components/schemas/Debt'
                 type: object
-  '/contacts/{contact_id}/smslog':
+  '/contacts/{id}/smslog':
     parameters:
       - schema:
-          type: integer
-        name: contact_id
+          type: string
+        name: id
         in: path
         required: true
-        description: contact_id
     get:
-      summary: contacts smslog
-      tags: []
-      operationId: get-contacts-contact_id-smslog
-      description: 'SMS logs for contact implementing pagination '
+      summary: Get SMS Log for Contact by ID
+      tags:
+        - Contacts
+      operationId: getContactSMSlog
+      description: 'Returns a List of Every SMS Message logged for a Contact '
       requestBody:
         content:
           application/json:
