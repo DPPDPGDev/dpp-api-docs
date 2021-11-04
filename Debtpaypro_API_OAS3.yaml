@@ -963,8 +963,8 @@ paths:
               $ref: '#/components/schemas/SMS'
             examples:
               second log:
-                value:
-                  offset: '1 "limit":1'
+                  offset: 1
+                  limit: 1
               3 logs:
                 value:
                   offset: 0
