@@ -500,6 +500,28 @@ paths:
                 properties:
                   status:
                     $ref: models/Status.yaml
+  '/contacts/{id}/smslog':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      operationId: get-contacts-id-smslog
+      description: contacts sms logs
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SMS'
+        '400':
+          description: Bad Request
   /auth/token:
     post:
       tags:
@@ -2333,6 +2355,7 @@ components:
           items:
             type: string
       type: object
+      description: SMS model for contacts
     Docs:
       description: docs data
       properties:
@@ -2682,104 +2705,6 @@ components:
         name:
           type: string
       type: object
-    User:
-      type: object
-      description: ''
-      properties:
-        user_id:
-          title: User ID
-          type: integer
-          example: 6033912
-          readOnly: true
-        acctID:
-          title: Account ID
-          type: integer
-          example: 3863
-          readOnly: true
-        guid:
-          title: Group ID
-          type: string
-          example: ba2a29ca-f1d7-f58d-f670-fb92f716e513
-        company_id:
-          title: Company ID
-          type: integer
-          example: 42128
-          readOnly: true
-        parent_id:
-          title: Parent ID
-          type: integer
-          example: 4950368
-        user_type:
-          title: User Type
-          type: integer
-          example: 1
-        created:
-          title: Created Date
-          type: string
-          format: date-time
-          example: '2021-01-13 12:47:25'
-          readOnly: true
-        user_name:
-          title: User Name
-          type: string
-          example: QAuser
-        firstname:
-          title: First Name
-          type: string
-          example: QA
-        lastname:
-          title: Last Name
-          type: string
-          example: Tester
-        company:
-          title: Company Name
-          type: string
-          example: Acme
-        email:
-          title: Company Email
-          type: string
-          example: mail@debtpaypro.com
-        active:
-          title: Active Indicator
-          type: boolean
-          example: true
-        role:
-          title: Role
-          type: integer
-          example: 29399
-        attorney:
-          title: Attorney Indicator
-          type: boolean
-          example: true
-        payee_id:
-          title: Payee ID
-          type: integer
-          example: 23006
-        del:
-          title: Del
-          type: integer
-          example: 0
-          readOnly: true
-        delTime:
-          title: Delete Date
-          type: string
-          format: date-time
-          example: '2021-01-13 12:47:25'
-          readOnly: true
-        pass_reset:
-          title: Password Reset
-          type: boolean
-          example: false
-        master:
-          title: Master Indicator
-          type: boolean
-          example: false
-        billable:
-          title: Billable Indicator
-          type: boolean
-          example: true
-      required:
-        - email
     Call-Update:
       title: Call
       type: object
@@ -2821,6 +2746,90 @@ components:
           example: 0
         recording_id:
           type: integer
+    SMS:
+      description: contacts SMS object
+      type: object
+      properties:
+        id:
+          type: string
+          minLength: 1
+        sdate:
+          type: string
+          minLength: 1
+        body:
+          type: string
+          minLength: 1
+        status:
+          type: string
+          minLength: 1
+        client_id:
+          type: string
+          minLength: 1
+        sender:
+          type: string
+          minLength: 1
+        flag:
+          type: string
+          minLength: 1
+        schedule_id:
+          type: string
+          minLength: 1
+        receiver_phone_number:
+          type: string
+          minLength: 1
+        title:
+          type: string
+          minLength: 1
+        from_number:
+          type: string
+          minLength: 1
+      required:
+        - id
+        - sdate
+        - body
+        - status
+        - client_id
+        - sender
+        - flag
+        - schedule_id
+        - receiver_phone_number
+        - title
+        - from_number
+      x-examples:
+        EX1:
+          id: '340'
+          sdate: '2021-10-12 15:04:16'
+          body: adsadas
+          status: null
+          client_id: '415113447'
+          sender:
+            object: user
+            user_id: '51494'
+            acctID: '5'
+            guid: 5186d174-ae25-d2a8-ac37-da5645888947
+            company_id: '83'
+            parent_id: '0'
+            user_type: '1'
+            created: '2014-12-23 11:06:46'
+            user_name: support
+            firstname: eric1
+            lastname: bench
+            company: ''
+            email: eric@debtpaypro.com
+            active: '1'
+            role: '638'
+            attorney: '0'
+            payee_id: '0'
+            del: '0'
+            delTime: null
+            pass_reset: '0'
+            master: '1'
+            billable: '0'
+          flag: '1'
+          schedule_id: '0'
+          receiver_phone_number: '16309370077'
+          title: null
+          from_number: '+16309488890'
   responses:
     default:
       description: default
