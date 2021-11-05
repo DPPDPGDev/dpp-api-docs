@@ -2830,6 +2830,512 @@ components:
           receiver_phone_number: '16309370077'
           title: null
           from_number: '+16309488890'
+    User:
+      description: ''
+      type: object
+      properties:
+        title:
+          type: string
+          minLength: 1
+        type:
+          type: string
+          minLength: 1
+        description:
+          type: string
+          minLength: 1
+        properties:
+          type: object
+          properties:
+            user_id:
+              type: object
+              properties:
+                title:
+                  type: string
+                  minLength: 1
+                type:
+                  type: string
+                  minLength: 1
+                example:
+                  type: number
+                readOnly:
+                  type: boolean
+              required:
+                - title
+                - type
+                - example
+                - readOnly
+            acctID:
+              type: object
+              properties:
+                title:
+                  type: string
+                  minLength: 1
+                type:
+                  type: string
+                  minLength: 1
+                example:
+                  type: number
+                readOnly:
+                  type: boolean
+              required:
+                - title
+                - type
+                - example
+                - readOnly
+            guid:
+              type: object
+              properties:
+                title:
+                  type: string
+                  minLength: 1
+                type:
+                  type: string
+                  minLength: 1
+                example:
+                  type: string
+                  minLength: 1
+              required:
+                - title
+                - type
+                - example
+            company_id:
+              type: object
+              properties:
+                title:
+                  type: string
+                  minLength: 1
+                type:
+                  type: string
+                  minLength: 1
+                example:
+                  type: number
+                readOnly:
+                  type: boolean
+              required:
+                - title
+                - type
+                - example
+                - readOnly
+            parent_id:
+              type: object
+              properties:
+                title:
+                  type: string
+                  minLength: 1
+                type:
+                  type: string
+                  minLength: 1
+                example:
+                  type: number
+              required:
+                - title
+                - type
+                - example
+            user_type:
+              type: object
+              properties:
+                title:
+                  type: string
+                  minLength: 1
+                type:
+                  type: string
+                  minLength: 1
+                example:
+                  type: number
+              required:
+                - title
+                - type
+                - example
+            created:
+              type: object
+              properties:
+                title:
+                  type: string
+                  minLength: 1
+                type:
+                  type: string
+                  minLength: 1
+                format:
+                  type: string
+                  minLength: 1
+                example:
+                  type: string
+                  minLength: 1
+                readOnly:
+                  type: boolean
+              required:
+                - title
+                - type
+                - format
+                - example
+                - readOnly
+            user_name:
+              type: object
+              properties:
+                title:
+                  type: string
+                  minLength: 1
+                type:
+                  type: string
+                  minLength: 1
+                example:
+                  type: string
+                  minLength: 1
+              required:
+                - title
+                - type
+                - example
+            firstname:
+              type: object
+              properties:
+                title:
+                  type: string
+                  minLength: 1
+                type:
+                  type: string
+                  minLength: 1
+                example:
+                  type: string
+                  minLength: 1
+              required:
+                - title
+                - type
+                - example
+            lastname:
+              type: object
+              properties:
+                title:
+                  type: string
+                  minLength: 1
+                type:
+                  type: string
+                  minLength: 1
+                example:
+                  type: string
+                  minLength: 1
+              required:
+                - title
+                - type
+                - example
+            company:
+              type: object
+              properties:
+                title:
+                  type: string
+                  minLength: 1
+                type:
+                  type: string
+                  minLength: 1
+                example:
+                  type: string
+                  minLength: 1
+              required:
+                - title
+                - type
+                - example
+            email:
+              type: object
+              properties:
+                title:
+                  type: string
+                  minLength: 1
+                type:
+                  type: string
+                  minLength: 1
+                example:
+                  type: string
+                  minLength: 1
+              required:
+                - title
+                - type
+                - example
+            active:
+              type: object
+              properties:
+                title:
+                  type: string
+                  minLength: 1
+                type:
+                  type: string
+                  minLength: 1
+                example:
+                  type: boolean
+              required:
+                - title
+                - type
+                - example
+            role:
+              type: object
+              properties:
+                title:
+                  type: string
+                  minLength: 1
+                type:
+                  type: string
+                  minLength: 1
+                example:
+                  type: number
+              required:
+                - title
+                - type
+                - example
+            attorney:
+              type: object
+              properties:
+                title:
+                  type: string
+                  minLength: 1
+                type:
+                  type: string
+                  minLength: 1
+                example:
+                  type: boolean
+              required:
+                - title
+                - type
+                - example
+            payee_id:
+              type: object
+              properties:
+                title:
+                  type: string
+                  minLength: 1
+                type:
+                  type: string
+                  minLength: 1
+                example:
+                  type: number
+              required:
+                - title
+                - type
+                - example
+            del:
+              type: object
+              properties:
+                title:
+                  type: string
+                  minLength: 1
+                type:
+                  type: string
+                  minLength: 1
+                example:
+                  type: number
+                readOnly:
+                  type: boolean
+              required:
+                - title
+                - type
+                - example
+                - readOnly
+            delTime:
+              type: object
+              properties:
+                title:
+                  type: string
+                  minLength: 1
+                type:
+                  type: string
+                  minLength: 1
+                format:
+                  type: string
+                  minLength: 1
+                example:
+                  type: string
+                  minLength: 1
+                readOnly:
+                  type: boolean
+              required:
+                - title
+                - type
+                - format
+                - example
+                - readOnly
+            pass_reset:
+              type: object
+              properties:
+                title:
+                  type: string
+                  minLength: 1
+                type:
+                  type: string
+                  minLength: 1
+                example:
+                  type: boolean
+              required:
+                - title
+                - type
+                - example
+            master:
+              type: object
+              properties:
+                title:
+                  type: string
+                  minLength: 1
+                type:
+                  type: string
+                  minLength: 1
+                example:
+                  type: boolean
+              required:
+                - title
+                - type
+                - example
+            billable:
+              type: object
+              properties:
+                title:
+                  type: string
+                  minLength: 1
+                type:
+                  type: string
+                  minLength: 1
+                example:
+                  type: boolean
+              required:
+                - title
+                - type
+                - example
+          required:
+            - user_id
+            - acctID
+            - guid
+            - company_id
+            - parent_id
+            - user_type
+            - created
+            - user_name
+            - firstname
+            - lastname
+            - company
+            - email
+            - active
+            - role
+            - attorney
+            - payee_id
+            - del
+            - delTime
+            - pass_reset
+            - master
+            - billable
+        required:
+          type: array
+          items:
+            required: []
+            properties: {}
+        x-tags:
+          type: array
+          items:
+            required: []
+            properties: {}
+      required:
+        - title
+        - type
+        - description
+        - properties
+        - required
+        - x-tags
+      x-examples:
+        example-1:
+          title: User
+          type: object
+          description: User Record
+          properties:
+            user_id:
+              title: User ID
+              type: integer
+              example: 6033912
+              readOnly: true
+            acctID:
+              title: Account ID
+              type: integer
+              example: 3863
+              readOnly: true
+            guid:
+              title: Group ID
+              type: string
+              example: ba2a29ca-f1d7-f58d-f670-fb92f716e513
+            company_id:
+              title: Company ID
+              type: integer
+              example: 42128
+              readOnly: true
+            parent_id:
+              title: Parent ID
+              type: integer
+              example: 4950368
+            user_type:
+              title: User Type
+              type: integer
+              example: 1
+            created:
+              title: Created Date
+              type: string
+              format: date-time
+              example: '2021-01-13 12:47:25'
+              readOnly: true
+            user_name:
+              title: User Name
+              type: string
+              example: QAuser
+            firstname:
+              title: First Name
+              type: string
+              example: QA
+            lastname:
+              title: Last Name
+              type: string
+              example: Tester
+            company:
+              title: Company Name
+              type: string
+              example: Acme
+            email:
+              title: Company Email
+              type: string
+              example: mail@debtpaypro.com
+            active:
+              title: Active Indicator
+              type: boolean
+              example: true
+            role:
+              title: Role
+              type: integer
+              example: 29399
+            attorney:
+              title: Attorney Indicator
+              type: boolean
+              example: true
+            payee_id:
+              title: Payee ID
+              type: integer
+              example: 23006
+            del:
+              title: Del
+              type: integer
+              example: 0
+              readOnly: true
+            delTime:
+              title: Delete Date
+              type: string
+              format: date-time
+              example: '2021-01-13 12:47:25'
+              readOnly: true
+            pass_reset:
+              title: Password Reset
+              type: boolean
+              example: false
+            master:
+              title: Master Indicator
+              type: boolean
+              example: false
+            billable:
+              title: Billable Indicator
+              type: boolean
+              example: true
+          required:
+            - email
+          x-tags:
+            - User
   responses:
     default:
       description: default
