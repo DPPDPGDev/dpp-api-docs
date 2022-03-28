@@ -109,6 +109,7 @@ paths:
                   dialer_id: 1
                   recording_url: 'https://stairwork.ru/test.mp3'
                   assigned_agent: 432156
+                  call_dispsition: 4
               Required Parameters Only:
                 value:
                   contactID: 475956560
