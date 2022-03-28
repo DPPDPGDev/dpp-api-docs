@@ -3124,6 +3124,81 @@ paths:
                                 type: object
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+  '/contacts/{contact_id}/sms':
+    parameters:
+      - schema:
+          type: string
+        name: contact_id
+        in: path
+        required: true
+    get:
+      summary: ''
+      tags: []
+      responses: {}
+      operationId: get-contacts-contact_id-sms
+    post:
+      summary: Send SMS
+      operationId: post-contacts-contact_id-sms
+      responses:
+        '200':
+          description: OK
+      description: Send SMS via API in order to use our API integration with outside platforms.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  from_number_id: '4232'
+                  message:
+                    message_template: '3323'
+                    message_text: Your next payment of $300.00 will process on 1/2022
+                  external_forms:
+                    send_form: '1'
+                    form_id: '3332'
+              properties:
+                from_number_id:
+                  type: string
+                  minLength: 1
+                message:
+                  type: object
+                  required:
+                    - message_text
+                  properties:
+                    message_template:
+                      type: string
+                      minLength: 1
+                    message_text:
+                      type: string
+                      minLength: 1
+                external_forms:
+                  type: object
+                  required:
+                    - send_form
+                  properties:
+                    send_form:
+                      type: string
+                      minLength: 1
+                    form_id:
+                      type: string
+                      minLength: 1
+              required:
+                - from_number_id
+                - message
+                - external_forms
+            examples:
+              example:
+                value:
+                  from_number_id: '4232'
+                  message:
+                    message_template: '3323'
+                    message_text: Your next payment of $300.00 will process on 1/2022
+                  external_forms:
+                    send_form: '1'
+                    form_id: '3332'
+        description: The `message` and `external_forms` arguments should be JSON strings sent in the request body type `form-data` or `x-www-form-urlencoded`.
 components:
   responses:
     POST_200:
