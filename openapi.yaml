@@ -617,12 +617,37 @@ paths:
         content:
           application/json:
             schema:
+              description: ''
               type: object
               properties:
                 content:
                   type: string
+                  minLength: 1
+                notify_users:
+                  type: array
+                  items:
+                    required: []
+                    properties: {}
+                cc_emails:
+                  type: array
+                  items:
+                    required: []
+                    properties: {}
               required:
                 - content
+                - notify_users
+                - cc_emails
+              x-examples:
+                example-1:
+                  content: test note
+                  notify_users:
+                    - '1231'
+                    - '3213'
+                    - '4332'
+                  cc_emails:
+                    - test@test.net
+                    - test2@test.net
+                    - test3@test.net
       responses:
         '200':
           description: Successfully returned Contact Notes
