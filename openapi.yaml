@@ -9,8 +9,8 @@ info:
 servers:
   - url: 'https://api.debtpaypro.com/v1'
     description: Production
-  - url: 'https://staging4-api.debtpaypro.com/v1'
-    description: staging4
+  - url: 'https://staging15-api.debtpaypro.com/v1'
+    description: staging15
 tags:
   - name: Auth
   - name: Calls
@@ -19,6 +19,7 @@ tags:
   - name: Contacts
   - name: ContactDocuments
   - name: ContactForms
+  - name: Creditors
   - name: ContactNotes
   - name: Debts
   - name: DebtNotes
@@ -3199,6 +3200,36 @@ paths:
                     send_form: '1'
                     form_id: '3332'
         description: The `message` and `external_forms` arguments should be JSON strings sent in the request body type `form-data` or `x-www-form-urlencoded`.
+  '/creditors/{id}':
+    get:
+      tags:
+        - Creditors
+      summary: Get Creditor by Creditor ID
+      description: Returns Creditor associated with the Creditor ID
+      operationId: get-creditors-id
+      parameters:
+        - name: id
+          in: path
+          description: Id of Creditor
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully retrieved Creditor
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+              examples:
+                $ref: '#/components/examples/SuccessfulRequest.json'
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'
 components:
   responses:
     POST_200:
