@@ -2577,6 +2577,718 @@ paths:
           $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+    get:
+      summary: Get All Users
+      operationId: get-users
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  response:
+                    type: array
+                    uniqueItems: true
+                    minItems: 1
+                    items:
+                      required:
+                        - id
+                        - created
+                        - username
+                        - firstname
+                        - lastname
+                        - email
+                        - last_login
+                        - active
+                        - deleted
+                      properties:
+                        id:
+                          type: string
+                          minLength: 1
+                        created:
+                          type: string
+                          minLength: 1
+                        company:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              minLength: 1
+                            name:
+                              type: string
+                              minLength: 1
+                          required:
+                            - id
+                            - name
+                        role:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              minLength: 1
+                            name:
+                              type: string
+                              minLength: 1
+                          required:
+                            - id
+                            - name
+                        username:
+                          type: string
+                          minLength: 1
+                        firstname:
+                          type: string
+                          minLength: 1
+                        lastname:
+                          type: string
+                          minLength: 1
+                        email:
+                          type: string
+                          minLength: 1
+                        last_login:
+                          type: string
+                          minLength: 1
+                        active:
+                          type: boolean
+                        deleted:
+                          type: boolean
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                    required:
+                      - code
+                required:
+                  - response
+                  - status
+                x-examples:
+                  example-1:
+                    response:
+                      - id: '19'
+                        created: '2008-09-29 12:13:50'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '638'
+                          name: Super Admin KK
+                        username: kkehler
+                        firstname: Kris
+                        lastname: Kehler
+                        email: kkehler@debtpaypro.com
+                        last_login: '2016-12-06 14:26:00'
+                        active: true
+                        deleted: false
+                      - id: '20'
+                        created: '2008-09-29 12:14:27'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '8'
+                          name: DPG Operations
+                        username: tknauss
+                        firstname: Tom
+                        lastname: Knauss
+                        email: tknauss@baselinemediagroup.com
+                        last_login: null
+                        active: false
+                        deleted: false
+                      - id: '22'
+                        created: '2008-10-09 10:24:05'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '8'
+                          name: DPG Operations
+                        username: jknauss
+                        firstname: John
+                        lastname: Knauss
+                        email: jknauss@baselinemediagroup.com
+                        last_login: null
+                        active: false
+                        deleted: false
+                      - id: '387'
+                        created: '2009-03-20 15:14:40'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '36'
+                          name: Sales Manager
+                        username: mreynolds
+                        firstname: Matt
+                        lastname: Reynolds
+                        email: matt@baselinemediagroup.com
+                        last_login: null
+                        active: true
+                        deleted: true
+                      - id: '407'
+                        created: '2009-04-01 17:49:38'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '8'
+                          name: DPG Operations
+                        username: jcahue
+                        firstname: Juan
+                        lastname: Cahue
+                        email: jcahue@debtpaypro.com
+                        last_login: null
+                        active: true
+                        deleted: false
+                      - id: '544'
+                        created: '2009-09-16 17:19:09'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '2088'
+                          name: Super Admin CQ
+                        username: cqueen
+                        firstname: Chris
+                        lastname: Queen
+                        email: chris@debtpaypro.com
+                        last_login: null
+                        active: true
+                        deleted: false
+                      - id: '545'
+                        created: '2009-09-16 17:20:05'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '438'
+                          name: Limited DPP
+                        username: dcook
+                        firstname: Donald
+                        lastname: Cook
+                        email: donald@debtpaypro.com
+                        last_login: null
+                        active: false
+                        deleted: false
+                      - id: '632'
+                        created: '2009-11-23 13:24:03'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '39'
+                          name: Consumer Services
+                        username: mary
+                        firstname: Mary
+                        lastname: Malkowski
+                        email: sales@optimalresultsgroup.com
+                        last_login: null
+                        active: false
+                        deleted: false
+                      - id: '16430'
+                        created: '2011-05-04 18:00:09'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '369'
+                          name: Admin2
+                        username: jqueen
+                        firstname: Jodi
+                        lastname: Queen
+                        email: jodi@debtpaygateway.com
+                        last_login: null
+                        active: false
+                        deleted: false
+                      - id: '17399'
+                        created: '2011-06-19 17:36:14'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '8'
+                          name: DPG Operations
+                        username: mkehler
+                        firstname: Megan
+                        lastname: Kehler
+                        email: mkehler@debtpaygateway.com
+                        last_login: null
+                        active: true
+                        deleted: false
+                      - id: '18888'
+                        created: '2011-08-30 13:55:07'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '36'
+                          name: Sales Manager
+                        username: tmarkel
+                        firstname: Trey
+                        lastname: Markel
+                        email: tmarkel@debtpaypro.com
+                        last_login: null
+                        active: false
+                        deleted: false
+                      - id: '20697'
+                        created: '2011-11-15 09:38:40'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '8'
+                          name: DPG Operations
+                        username: kjkehler
+                        firstname: Kris J
+                        lastname: Kehler
+                        email: kkehler@debtpaypro.com
+                        last_login: null
+                        active: true
+                        deleted: false
+                      - id: '37002'
+                        created: '2013-02-15 16:36:32'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '6190'
+                          name: PMO
+                        username: adam
+                        firstname: Adam
+                        lastname: Foster
+                        email: adam@debtpaypro.com
+                        last_login: null
+                        active: true
+                        deleted: false
+                      - id: '39741'
+                        created: '2013-06-06 17:10:58'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '849'
+                          name: Controller
+                        username: jessica
+                        firstname: Jessica
+                        lastname: Kehler
+                        email: jkehler19@gmail.com
+                        last_login: null
+                        active: false
+                        deleted: false
+                      - id: '40432'
+                        created: '2013-07-03 23:14:45'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '849'
+                          name: Controller
+                        username: jenjones
+                        firstname: Jennifer
+                        lastname: Jones
+                        email: jen@debtpaypro.com
+                        last_login: null
+                        active: true
+                        deleted: false
+                      - id: '42590'
+                        created: '2013-09-09 23:15:00'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '849'
+                          name: Controller
+                        username: tdulek
+                        firstname: Tom
+                        lastname: Dulek
+                        email: tom.dulek@gmail.com
+                        last_login: null
+                        active: false
+                        deleted: false
+                      - id: '50958'
+                        created: '2014-03-05 21:41:22'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '762'
+                          name: Support
+                        username: stefanie
+                        firstname: Stefanie
+                        lastname: Espinola
+                        email: stefanie@debtpaypro.com
+                        last_login: null
+                        active: false
+                        deleted: false
+                      - id: '51018'
+                        created: '2014-03-06 17:56:19'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '849'
+                          name: Controller
+                        username: auditors
+                        firstname: Crowe
+                        lastname: Horwathe
+                        email: kkehler@debtpaypro.com
+                        last_login: null
+                        active: false
+                        deleted: false
+                      - id: '51494'
+                        created: '2014-12-23 11:06:46'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '638'
+                          name: Super Admin KK
+                        username: support
+                        firstname: eric1
+                        lastname: bench
+                        email: eric@debtpaypro.com
+                        last_login: '2022-03-30 11:26:25'
+                        active: true
+                        deleted: false
+                      - id: '54806'
+                        created: '2014-04-18 22:12:42'
+                        company:
+                          id: '2308'
+                          name: Debt Pay Pro
+                        role:
+                          id: '36'
+                          name: Sales Manager
+                        username: testuser
+                        firstname: Test
+                        lastname: User
+                        email: test@debtpaypro.com
+                        last_login: '2019-08-27 11:17:12'
+                        active: true
+                        deleted: false
+                      - id: '72191'
+                        created: '2014-08-14 17:21:29'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '5992'
+                          name: Operations Director
+                        username: rick
+                        firstname: Rick
+                        lastname: Anderlick
+                        email: rick@debtpaypro.com
+                        last_login: null
+                        active: true
+                        deleted: false
+                      - id: '81293'
+                        created: '2014-09-15 15:26:13'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '8'
+                          name: DPG Operations
+                        username: azagal
+                        firstname: Aracely
+                        lastname: Zagal
+                        email: aracely@debtpaygateway.com
+                        last_login: null
+                        active: true
+                        deleted: false
+                      - id: '97479'
+                        created: '0000-00-00 00:00:00'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '0'
+                          name: null
+                        username: deve1
+                        firstname: deve1
+                        lastname: test
+                        email: eric@debtpaypro.com
+                        last_login: null
+                        active: true
+                        deleted: false
+                      - id: '168416'
+                        created: '2015-01-16 10:40:07'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '762'
+                          name: Support
+                        username: matt
+                        firstname: Matt
+                        lastname: Pyne
+                        email: matt@debtpaypro.com
+                        last_login: null
+                        active: true
+                        deleted: false
+                      - id: '182007'
+                        created: '2015-01-28 15:48:12'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '36'
+                          name: Sales Manager
+                        username: kristen
+                        firstname: Kristen
+                        lastname: Dyches
+                        email: kristen@debtpaypro.com
+                        last_login: null
+                        active: false
+                        deleted: false
+                      - id: '219674'
+                        created: '2015-03-08 23:51:07'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '36'
+                          name: Sales Manager
+                        username: kking
+                        firstname: Kenton
+                        lastname: King
+                        email: kking@debtpaypro.com
+                        last_login: null
+                        active: true
+                        deleted: false
+                      - id: '296253'
+                        created: '0000-00-00 00:00:00'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '36'
+                          name: Sales Manager
+                        username: cmarkt
+                        firstname: Chris
+                        lastname: Markt
+                        email: chris@marktimprovements.com
+                        last_login: null
+                        active: false
+                        deleted: false
+                      - id: '385282'
+                        created: '2015-07-27 13:33:58'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '4990'
+                          name: Sales / Accounting
+                        username: kaitlyn
+                        firstname: Kaitlyn
+                        lastname: Dorsey
+                        email: kaitlyn@debtpaypro.com
+                        last_login: null
+                        active: true
+                        deleted: false
+                      - id: '450886'
+                        created: '2012-04-13 19:51:59'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '0'
+                          name: null
+                        username: deve2
+                        firstname: deve2
+                        lastname: test
+                        email: eric@debtpaypro.com
+                        last_login: null
+                        active: true
+                        deleted: false
+                      - id: '467731'
+                        created: '2015-10-02 09:11:39'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '762'
+                          name: Support
+                        username: adam.o
+                        firstname: Adam
+                        lastname: Olszewski
+                        email: adam.o@debtpaypro.com
+                        last_login: null
+                        active: true
+                        deleted: false
+                      - id: '490024'
+                        created: '2015-10-20 10:49:35'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '638'
+                          name: Super Admin KK
+                        username: travis
+                        firstname: Travis
+                        lastname: Wheeler
+                        email: travis@debtpaypro.com
+                        last_login: null
+                        active: true
+                        deleted: false
+                      - id: '504853'
+                        created: '2015-10-30 08:51:12'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '39'
+                          name: Consumer Services
+                        username: vanessa
+                        firstname: Vanessa
+                        lastname: DeMario
+                        email: vanessa@debtpaygateway.com
+                        last_login: null
+                        active: true
+                        deleted: false
+                      - id: '505015'
+                        created: '0000-00-00 00:00:00'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '0'
+                          name: null
+                        username: deve3
+                        firstname: deve3
+                        lastname: test
+                        email: eric@debtpaypro.com
+                        last_login: null
+                        active: true
+                        deleted: false
+                      - id: '571550'
+                        created: '2016-01-04 10:19:40'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '4990'
+                          name: Sales / Accounting
+                        username: ramona
+                        firstname: Ramona
+                        lastname: Peters
+                        email: support@debtpaypro.com
+                        last_login: null
+                        active: true
+                        deleted: false
+                      - id: '571560'
+                        created: '2016-01-04 10:31:17'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '4990'
+                          name: Sales / Accounting
+                        username: jim
+                        firstname: Jim
+                        lastname: Steidl
+                        email: support@debtpaypro.com
+                        last_login: null
+                        active: true
+                        deleted: false
+                      - id: '585478'
+                        created: '2016-01-13 10:38:55'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '638'
+                          name: Super Admin KK
+                        username: PLACEHOLDER
+                        firstname: OTHER
+                        lastname: USER
+                        email: eric@debtpaypro.com
+                        last_login: null
+                        active: true
+                        deleted: false
+                      - id: '1854254'
+                        created: '2017-10-10 16:51:13'
+                        company:
+                          id: '2308'
+                          name: Debt Pay Pro
+                        role:
+                          id: '49'
+                          name: Demo
+                        username: NOPERMISSIONS
+                        firstname: 'no'
+                        lastname: permissions
+                        email: eric@debtpaypro.com
+                        last_login: null
+                        active: true
+                        deleted: false
+                      - id: '1854257'
+                        created: '2014-12-23 11:06:46'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '638'
+                          name: Super Admin KK
+                        username: support2
+                        firstname: eric2
+                        lastname: bench2
+                        email: eric@debtpaypro.com
+                        last_login: null
+                        active: true
+                        deleted: false
+                      - id: '1854258'
+                        created: '2014-12-23 11:06:46'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '638'
+                          name: Super Admin KK
+                        username: support3
+                        firstname: eric3
+                        lastname: bench3
+                        email: eric@debtpaypro.com
+                        last_login: null
+                        active: true
+                        deleted: false
+                      - id: '2726423'
+                        created: '2012-08-14 22:45:07'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '0'
+                          name: null
+                        username: deve4
+                        firstname: deve4
+                        lastname: test
+                        email: eric@debtpaypro.com
+                        last_login: null
+                        active: true
+                        deleted: false
+                      - id: '3519540'
+                        created: '2014-12-23 11:06:46'
+                        company:
+                          id: '83'
+                          name: DebtPayGateway
+                        role:
+                          id: '4990'
+                          name: Sales / Accounting
+                        username: support1
+                        firstname: eric2
+                        lastname: bench2
+                        email: eric@debtpaypro.com
+                        last_login: null
+                        active: true
+                        deleted: false
+                    status:
+                      code: 200
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+      description: Returns all users for an account.
   '/users/{id}':
     get:
       tags:
