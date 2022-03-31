@@ -635,11 +635,17 @@ paths:
                   type: string
                   minLength: 1
                 notify_users:
-                  type: array
-                  items: {}
+                  type: object
+                  properties:
+                    '':
+                      type: string
+                      example: '4332'
                 cc_emails:
-                  type: array
-                  items: {}
+                  type: object
+                  properties:
+                    '':
+                      type: string
+                      example: test3@test.net
               required:
                 - content
                 - notify_users
