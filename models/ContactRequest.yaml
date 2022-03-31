@@ -1,184 +1,336 @@
-title: Contact
+description: ''
 type: object
-description: Contact Record
-x-tags:
-  - Contacts
-examples: []
 properties:
-  object:
-    type: string
-    example: contact
-    readOnly: true
-  id:
-    type: integer
-    example: 382760691
-    readOnly: true
-  acctID:
-    type: integer
-    example: 3863
-    readOnly: true
-  company_id:
-    type: integer
-    example: 42128
-    readOnly: true
   file_type:
-    type: integer
-    example: 1
+    type: number
   form_id:
-    type: integer
-    example: 18626
-  created:
-    type: string
-    format: date-time
-    readOnly: true
-  created_by:
-    type: integer
-    example: 4950368
-    readOnly: true
-  modified:
-    type: string
-    format: date-time
-    readOnly: true
-  modified_by:
-    type: integer
-    example: 4950368
-    readOnly: true
+    type: number
   assigned_to:
-    type: integer
-    example: 6515056
+    type: number
   campaign_id:
-    type: integer
-    example: 158227
+    type: number
   attorney:
     type: boolean
-    default: false
   attorney_id:
-    type: integer
-    example: 0
+    type: number
   attorney_id2:
-    type: integer
-    example: 0
+    type: number
   first_name:
     type: string
-    example: John
+    minLength: 1
   middle_name:
     type: string
-    example: E
+    minLength: 1
   last_name:
     type: string
-    example: Doe
+    minLength: 1
   salutation:
     type: string
-    example: Hello
+    minLength: 1
   title:
     type: string
-    example: Mr.
+    minLength: 1
   phone_number:
     type: string
-    example: '13123831234'
+    minLength: 1
   phone_extension:
-    type: integer
-    example: 123
+    type: number
   cell_phone:
     type: string
-    example: '13123835678'
+    minLength: 1
   cell_extension:
-    type: integer
-    example: 123
+    type: number
   work_phone:
     type: string
-    example: '13123839753'
+    minLength: 1
   work_extension:
-    type: integer
-    example: 123
+    type: number
   address:
-    $ref: ../models/Address.yaml
+    type: object
+    properties:
+      address1:
+        type: string
+        minLength: 1
+      address2:
+        type: string
+        minLength: 1
+      address3:
+        type: string
+        minLength: 1
+      city:
+        type: string
+        minLength: 1
+      state:
+        type: string
+        minLength: 1
+      zip:
+        type: string
+        minLength: 1
+    required:
+      - address1
+      - address2
+      - address3
+      - city
+      - state
+      - zip
   email:
     type: string
-    example: test@test.com
+    minLength: 1
   social_security_number:
     type: string
-    example: 123-45-6789
+    minLength: 1
   date_of_birth:
     type: string
-    format: date
-    example: '1970-01-01'
+    minLength: 1
   language:
-    type: integer
-    example: 1
+    type: number
   submitted:
     type: boolean
-    default: false
   submitted_by:
-    type: integer
-    example: 0
+    type: number
   submitted_at:
     type: string
-    format: date-time
+    minLength: 1
   approved_by2:
-    type: integer
-    example: 0
+    type: number
   approved_date2:
     type: string
-    format: date
+    minLength: 1
   rejected_by:
-    type: integer
-    example: 0
+    type: number
   rejected_notes:
     type: string
-    example: Rejection Note
+    minLength: 1
   paused_notes:
     type: string
-    example: Paused Note
+    minLength: 1
   dropped_reason:
-    type: integer
-    example: 1
+    type: number
   grad_date:
     type: string
-    format: date
+    minLength: 1
   total_debt:
     type: number
-    example: 13755.9
   welcome_sent:
     type: string
-    format: date-time
+    minLength: 1
   paper_statements:
     type: boolean
-    default: false
   paper_welcome:
     type: boolean
-    default: false
   gateway_id:
-    type: integer
-    example: 0
+    type: number
   gateway_approved_by:
-    type: integer
-    example: 0
+    type: number
   gateway_hold:
     type: boolean
-    default: false
   gateway_hold_reason:
-    type: integer
-    example: 0
+    type: number
   gateway_hold_notes:
     type: string
+    minLength: 1
   gateway_auth_received:
     type: boolean
   gateway_auth_file:
     type: string
-    example: test_gateway_auth_file.pdf
+    minLength: 1
   iscoapp:
     type: boolean
-    default: false
   linked_coapp:
-    type: integer
-    example: 1231231
+    type: string
+    minLength: 1
   customs:
-    $ref: ../models/customfield.yaml
+    type: array
+    uniqueItems: true
+    minItems: 1
+    items:
+      required:
+        - field_id
+        - label
+        - type
+      properties:
+        field_id:
+          type: string
+          minLength: 1
+        value:
+          type: array
+          items:
+            required: []
+            properties: {}
+        label:
+          type: string
+          minLength: 1
+        type:
+          type: string
+          minLength: 1
 required:
+  - file_type
+  - form_id
+  - assigned_to
+  - campaign_id
+  - attorney
+  - attorney_id
+  - attorney_id2
   - first_name
+  - middle_name
   - last_name
+  - salutation
+  - title
   - phone_number
+  - phone_extension
+  - cell_phone
+  - cell_extension
+  - work_phone
+  - work_extension
   - address
   - email
+  - social_security_number
   - date_of_birth
+  - language
+  - submitted
+  - submitted_by
+  - submitted_at
+  - approved_by2
+  - approved_date2
+  - rejected_by
+  - rejected_notes
+  - paused_notes
+  - dropped_reason
+  - grad_date
+  - total_debt
+  - welcome_sent
+  - paper_statements
+  - paper_welcome
+  - gateway_id
+  - gateway_approved_by
+  - gateway_hold
+  - gateway_hold_reason
+  - gateway_hold_notes
+  - gateway_auth_received
+  - gateway_auth_file
+  - iscoapp
+  - linked_coapp
+  - customs
+x-examples:
+  example-1:
+    file_type: 1
+    form_id: 18626
+    assigned_to: 6045085
+    campaign_id: 128312
+    attorney: false
+    attorney_id: 0
+    attorney_id2: 0
+    first_name: John
+    middle_name: E.
+    last_name: Doe
+    salutation: Salutation
+    title: Mr.
+    phone_number: '12242525887'
+    phone_extension: 123
+    cell_phone: '12242525887'
+    cell_extension: 123
+    work_phone: '13123839986'
+    work_extension: 123
+    address:
+      address1: 123 Main St.
+      address2: Apt. 4008
+      address3: string
+      city: Chicago
+      state: IL
+      zip: '60612'
+    email: test@debtpaypro.com
+    social_security_number: '551192922'
+    date_of_birth: '1941-03-12'
+    language: 1
+    submitted: false
+    submitted_by: 4637734
+    submitted_at: '2020-02-21 16:23:29'
+    approved_by2: 0
+    approved_date2: '2020-02-21'
+    rejected_by: 0
+    rejected_notes: n/a
+    paused_notes: n/a
+    dropped_reason: 0
+    grad_date: '2020-05-27'
+    total_debt: 0
+    welcome_sent: '2020-02-21 16:23:29'
+    paper_statements: true
+    paper_welcome: true
+    gateway_id: 1
+    gateway_approved_by: 0
+    gateway_hold: false
+    gateway_hold_reason: 0
+    gateway_hold_notes: n/a
+    gateway_auth_received: true
+    gateway_auth_file: 66c29015-debtpaypro_QA_Test_Template_-_Chase_(xxxx4444).pdf
+    iscoapp: false
+    linked_coapp: '1231231'
+    customs:
+      - field_id: '2085'
+        value:
+          - enrolled
+          - invalidated
+          - waiting for credit bureau
+        label: Account Status
+        type: Multiple Select
+examples:
+  - file_type: 1
+    form_id: 18626
+    assigned_to: 6045085
+    campaign_id: 128312
+    attorney: false
+    attorney_id: 0
+    attorney_id2: 0
+    first_name: John
+    middle_name: E.
+    last_name: Doe
+    salutation: Salutation
+    title: Mr.
+    phone_number: '12242525887'
+    phone_extension: 123
+    cell_phone: '12242525887'
+    cell_extension: 123
+    work_phone: '13123839986'
+    work_extension: 123
+    address:
+      address1: 123 Main St.
+      address2: Apt. 4008
+      address3: string
+      city: Chicago
+      state: IL
+      zip: '60612'
+    email: test@debtpaypro.com
+    social_security_number: '551192922'
+    date_of_birth: '1941-03-12'
+    language: 1
+    submitted: false
+    submitted_by: 4637734
+    submitted_at: '2020-02-21 16:23:29'
+    approved_by2: 0
+    approved_date2: '2020-02-21'
+    rejected_by: 0
+    rejected_notes: n/a
+    paused_notes: n/a
+    dropped_reason: 0
+    grad_date: '2020-05-27'
+    total_debt: 0
+    welcome_sent: '2020-02-21 16:23:29'
+    paper_statements: true
+    paper_welcome: true
+    gateway_id: 1
+    gateway_approved_by: 0
+    gateway_hold: false
+    gateway_hold_reason: 0
+    gateway_hold_notes: n/a
+    gateway_auth_received: true
+    gateway_auth_file: 66c29015-debtpaypro_QA_Test_Template_-_Chase_(xxxx4444).pdf
+    iscoapp: false
+    linked_coapp: '1231231'
+    customs:
+      - field_id: '2085'
+        value:
+          - enrolled
+          - invalidated
+          - waiting for credit bureau
+        label: Account Status
+        type: Multiple Select
