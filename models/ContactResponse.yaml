@@ -171,6 +171,10 @@ properties:
     type: boolean
     default: false
   linked_coapp:
-    type: integer
+    type: object
+    properties:
+      id:
+        type: integer
+        example: 1231231
   customs:
     $ref: ../models/customfield.yaml
