@@ -3235,7 +3235,8 @@ paths:
         required: true
     get:
       summary: Get Enrolled Contact Debts
-      tags: []
+      tags:
+        - Contacts
       responses: {}
       operationId: get-contacts-contact_id-debts-enrolled
       description: Gets all *enrolled* debts for a contact ID.
@@ -3249,7 +3250,8 @@ paths:
         required: true
     get:
       summary: Get Not Enrolled Contact Debts
-      tags: []
+       tags:
+        - Contacts
       responses: {}
       operationId: get-contacts-contact_id-debts-notenrolled
       description: Gets all *not enrolled* debts for a contact ID.
@@ -3263,7 +3265,8 @@ paths:
         required: true
     get:
       summary: Get Settled Debts for Contact
-      tags: []
+      tags:
+        - Contacts
       responses: {}
       operationId: get-contacts-contact_id-debts-settled
       description: Gets all *settled* debts for a contact ID.
@@ -3277,7 +3280,8 @@ paths:
         required: true
     get:
       summary: Get Unsettled Debts for Contact
-      tags: []
+      tags:
+        - Contacts
       responses: {}
       operationId: get-contacts-contact_id-debts-notsettled
       description: Gets all *not settled* debts for a contact ID.
