@@ -786,7 +786,6 @@ paths:
                     $ref: ./models/SuccessStatus.yaml
         '400':
           $ref: '#/components/responses/ERROR_4XX'
-  
     get:
       tags:
         - Contacts
@@ -813,7 +812,7 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
         '400':
-          $ref: '#/components/responses/ERROR_4XX'    
+          $ref: '#/components/responses/ERROR_4XX'
   '/contacts/search_by_phone/{phone}':
     get:
       tags:
@@ -3198,70 +3197,91 @@ paths:
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{contact_id}/debts':
+    get:
+      tags:
+        - Contacts
+      summary: Get Contact Debts
+      description: Retrieve all debts for a contact ID
+      operationId: get-contacts-contact_id-debts
       parameters:
-        - schema:
-            type: string
-          name: contact_id
+        - name: contact_id
           in: path
+          description: Id of Contact
           required: true
-      get:
-        summary: Get Contact Debts
-        tags: []
-        responses: {}
-        operationId: get-contacts-contact_id-debts
-        description: Retrieve all debts for a contact ID.
-    '/contacts/{contact_id}/debts/enrolled':
-      parameters:
-        - schema:
-            type: string
-          name: contact_id
-          in: path
-          required: true
-      get:
-        summary: Get Enrolled Contact Debts
-        tags: []
-        responses: {}
-        operationId: get-contacts-contact_id-debts-enrolled
-        description: Gets all *enrolled* debts for a contact ID.
-    '/contacts/{contact_id}/debts/notenrolled':
-      parameters:
-        - schema:
-            type: string
-          name: contact_id
-          in: path
-          required: true
-      get:
-        summary: Get Not Enrolled Contact Debts
-        tags: []
-        responses: {}
-        operationId: get-contacts-contact_id-debts-notenrolled
-        description: Gets all *not enrolled* debts for a contact ID.
-    '/contacts/{contact_id}/debts/settled':
-      parameters:
-        - schema:
-            type: string
-          name: contact_id
-          in: path
-          required: true
-      get:
-        summary: Get Settled Debts for Contact
-        tags: []
-        responses: {}
-        operationId: get-contacts-contact_id-debts-settled
-        description: Gets all *settled* debts for a contact ID.
-    '/contacts/{contact_id}/debts/notsettled':
-      parameters:
-        - schema:
-            type: string
-          name: contact_id
-          in: path
-          required: true
-      get:
-        summary: Get Unsettled Debts for Contact
-        tags: []
-        responses: {}
-        operationId: get-contacts-contact_id-debts-notsettled
-        description: Gets all *not settled* debts for a contact ID.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully retrieved Debts
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+              examples:
+                $ref: '#/components/examples/SuccessfulRequest.json'
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'
+  '/contacts/{contact_id}/debts/enrolled':
+    parameters:
+      - schema:
+          type: string
+        name: contact_id
+        in: path
+        required: true
+    get:
+      summary: Get Enrolled Contact Debts
+      tags: []
+      responses: {}
+      operationId: get-contacts-contact_id-debts-enrolled
+      description: Gets all *enrolled* debts for a contact ID.
+      x-internal: true
+  '/contacts/{contact_id}/debts/notenrolledx':
+    parameters:
+      - schema:
+          type: string
+        name: contact_id
+        in: path
+        required: true
+    get:
+      summary: Get Not Enrolled Contact Debts
+      tags: []
+      responses: {}
+      operationId: get-contacts-contact_id-debts-notenrolled
+      description: Gets all *not enrolled* debts for a contact ID.
+      x-internal: true
+  '/contacts/{contact_id}/debts/settled':
+    parameters:
+      - schema:
+          type: string
+        name: contact_id
+        in: path
+        required: true
+    get:
+      summary: Get Settled Debts for Contact
+      tags: []
+      responses: {}
+      operationId: get-contacts-contact_id-debts-settled
+      description: Gets all *settled* debts for a contact ID.
+      x-internal: true
+  '/contacts/{contact_id}/debts/notsettled':
+    parameters:
+      - schema:
+          type: string
+        name: contact_id
+        in: path
+        required: true
+    get:
+      summary: Get Unsettled Debts for Contact
+      tags: []
+      responses: {}
+      operationId: get-contacts-contact_id-debts-notsettled
+      description: Gets all *not settled* debts for a contact ID.
+      x-internal: true
 components:
   responses:
     POST_200:
