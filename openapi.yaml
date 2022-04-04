@@ -3226,6 +3226,36 @@ paths:
                 $ref: '#/components/examples/SuccessfulRequest.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+  '/contacts/{contact_id}/debts/enrolled':
+    get:
+      tags:
+        - Contacts
+      summary: Get Enrolled Debts
+      description: Retrieve only enrolled debts for a contact
+      operationId: get-contacts-debts-enrolled
+      parameters:
+        - name: contact_id
+          in: path
+          description: Id of Contact
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully retrieved Debts
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+              examples:
+                $ref: '#/components/examples/SuccessfulRequest.json'
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'
 components:
   responses:
     POST_200:
