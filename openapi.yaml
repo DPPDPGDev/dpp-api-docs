@@ -786,6 +786,34 @@ paths:
                     $ref: ./models/SuccessStatus.yaml
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+  
+    get:
+      tags:
+        - Contacts
+      summary: Get Contact Debts
+      description: Retrieve all debts for a contact
+      operationId: getAllDebts
+      parameters:
+        - name: id
+          in: path
+          description: Id of Contact
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully sent Form to Client
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'    
   '/contacts/search_by_phone/{phone}':
     get:
       tags:
