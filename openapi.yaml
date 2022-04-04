@@ -3199,145 +3199,70 @@ paths:
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{contact_id}/debts':
-    get:
-      tags:
-        - Contacts
-      summary: Get All Contact Debts
-      description: Retrieve all debt records that exist for a contact
-      operationId: get-contacts-alldebts
       parameters:
-        - name: contact_id
+        - schema:
+            type: string
+          name: contact_id
           in: path
-          description: Id of Contact
           required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Successfully retrieved Debt Records
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: models/SuccessStatus.yaml
-                required:
-                  - status
-        '400':
-          $ref: '#/components/responses/ERROR_4XX'
-  '/contacts/{contact_id}/debts/enrolled':
-    get:
-      tags:
-        - Contacts
-      summary: Get Enrolled Contact Debts
-      description: Retrieve all enrolled debt records that exist for a contact
-      operationId: get-contact-enrolleddebts
+      get:
+        summary: Get Contact Debts
+        tags: []
+        responses: {}
+        operationId: get-contacts-contact_id-debts
+        description: Retrieve all debts for a contact ID.
+    '/contacts/{contact_id}/debts/enrolled':
       parameters:
-        - name: contact_id
+        - schema:
+            type: string
+          name: contact_id
           in: path
-          description: Id of Contact
           required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Successfully retrieved Enrolled Debt Records
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: models/SuccessStatus.yaml
-                required:
-                  - status
-        '400':
-          $ref: '#/components/responses/ERROR_4XX'      
-  '/contacts/{contact_id}/debts/notenrolled':
-    get:
-      tags:
-        - Contacts
-      summary: Get Unenrolled Contact Debts
-      description: Retrieve all unenrolled debt records that exist for a contact
-      operationId: get-contact-unenrolleddebts
+      get:
+        summary: Get Enrolled Contact Debts
+        tags: []
+        responses: {}
+        operationId: get-contacts-contact_id-debts-enrolled
+        description: Gets all *enrolled* debts for a contact ID.
+    '/contacts/{contact_id}/debts/notenrolled':
       parameters:
-        - name: contact_id
+        - schema:
+            type: string
+          name: contact_id
           in: path
-          description: Id of Contact
           required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Successfully retrieved Unenrolled Debt Records
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: models/SuccessStatus.yaml
-                required:
-                  - status
-        '400':
-          $ref: '#/components/responses/ERROR_4XX'
-  '/contacts/{contact_id}/debts/settled':
-    get:
-      tags:
-        - Contacts
-      summary: Get Settled Contact Debts
-      description: Retrieve all settled debt records that exist for a contact
-      operationId: get-contact-settleddebts
+      get:
+        summary: Get Not Enrolled Contact Debts
+        tags: []
+        responses: {}
+        operationId: get-contacts-contact_id-debts-notenrolled
+        description: Gets all *not enrolled* debts for a contact ID.
+    '/contacts/{contact_id}/debts/settled':
       parameters:
-        - name: contact_id
+        - schema:
+            type: string
+          name: contact_id
           in: path
-          description: Id of Contact
           required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Successfully retrieved Settled Debt Records
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: models/SuccessStatus.yaml
-                required:
-                  - status
-        '400':
-          $ref: '#/components/responses/ERROR_4XX'  
-  '/contacts/{contact_id}/debts/notsettled':
-    get:
-      tags:
-        - Contacts
-      summary: Get Unsettled Contact Debts
-      description: Retrieve all unsettled debt records that exist for a contact
-      operationId: get-contact-unsettleddebts
+      get:
+        summary: Get Settled Debts for Contact
+        tags: []
+        responses: {}
+        operationId: get-contacts-contact_id-debts-settled
+        description: Gets all *settled* debts for a contact ID.
+    '/contacts/{contact_id}/debts/notsettled':
       parameters:
-        - name: contact_id
+        - schema:
+            type: string
+          name: contact_id
           in: path
-          description: Id of Contact
           required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Successfully retrieved Unsettled Debt Records
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: models/SuccessStatus.yaml
-                required:
-                  - status
-        '400':
-          $ref: '#/components/responses/ERROR_4XX' 
+      get:
+        summary: Get Unsettled Debts for Contact
+        tags: []
+        responses: {}
+        operationId: get-contacts-contact_id-debts-notsettled
+        description: Gets all *not settled* debts for a contact ID.
 components:
   responses:
     POST_200:
