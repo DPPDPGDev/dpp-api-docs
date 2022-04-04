@@ -3198,6 +3198,146 @@ paths:
                 $ref: '#/components/examples/SuccessfulRequest.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+  '/contacts/{contact_id}/debts':
+    get:
+      tags:
+        - Contacts
+      summary: Get All Contact Debts
+      description: Retrieve all debt records that exist for a contact
+      operationId: get-contacts-alldebts
+      parameters:
+        - name: contact_id
+          in: path
+          description: Id of Contact
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully retrieved Debt Records
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: models/SuccessStatus.yaml
+                required:
+                  - status
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'
+  '/contacts/{contact_id}/debts/enrolled':
+    get:
+      tags:
+        - Contacts
+      summary: Get Enrolled Contact Debts
+      description: Retrieve all enrolled debt records that exist for a contact
+      operationId: get-contact-enrolleddebts
+      parameters:
+        - name: contact_id
+          in: path
+          description: Id of Contact
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully retrieved Enrolled Debt Records
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: models/SuccessStatus.yaml
+                required:
+                  - status
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'      
+  '/contacts/{contact_id}/debts/notenrolled':
+    get:
+      tags:
+        - Contacts
+      summary: Get Unenrolled Contact Debts
+      description: Retrieve all unenrolled debt records that exist for a contact
+      operationId: get-contact-unenrolleddebts
+      parameters:
+        - name: contact_id
+          in: path
+          description: Id of Contact
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully retrieved Unenrolled Debt Records
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: models/SuccessStatus.yaml
+                required:
+                  - status
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'
+  '/contacts/{contact_id}/debts/settled':
+    get:
+      tags:
+        - Contacts
+      summary: Get Settled Contact Debts
+      description: Retrieve all settled debt records that exist for a contact
+      operationId: get-contact-settleddebts
+      parameters:
+        - name: contact_id
+          in: path
+          description: Id of Contact
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully retrieved Settled Debt Records
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: models/SuccessStatus.yaml
+                required:
+                  - status
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'  
+  '/contacts/{contact_id}/debts/notsettled':
+    get:
+      tags:
+        - Contacts
+      summary: Get Unsettled Contact Debts
+      description: Retrieve all unsettled debt records that exist for a contact
+      operationId: get-contact-unsettleddebts
+      parameters:
+        - name: contact_id
+          in: path
+          description: Id of Contact
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully retrieved Unsettled Debt Records
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: models/SuccessStatus.yaml
+                required:
+                  - status
+        '400':
+          $ref: '#/components/responses/ERROR_4XX' 
 components:
   responses:
     POST_200:
