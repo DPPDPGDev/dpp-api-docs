@@ -2611,7 +2611,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                $ref: '#/components/examples/SuccessfulRequest.json'
+                Users:
+                  $ref: '#/components/examples/User.yaml'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/users/{id}':
