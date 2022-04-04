@@ -1133,6 +1133,35 @@ paths:
                       message: Form Request Sent
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+  'contacts/{id}/allTasks':
+    get:
+      tags:
+        - Contacts
+        - Tasks
+      summary: Get All Tasks
+      description: Retrieve all tasks for a contact
+      operationId: get-all-tasks
+      parameters:
+        - name: id
+          in: path
+          description: ID of Contact
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved Tasks
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: models/SuccessStatus.yaml
+                required:
+                  - status
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{id}/clixsign':
     post:
       tags:
