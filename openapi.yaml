@@ -621,6 +621,20 @@ paths:
               properties:
                 content:
                   type: string
+                notify_users:
+                  type: array
+                  description: User ID of each User to be notified
+                  uniqueItems: true
+                  items:
+                    type: string
+                    example: 1234
+                cc_emails:
+                  type: array
+                  description: Email addresses to send notification email to
+                  uniqueItems: true
+                  items:
+                    type: string
+                    example: test@test.com
               required:
                 - content
       responses:
