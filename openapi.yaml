@@ -2592,6 +2592,28 @@ paths:
           $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+    get:
+      tags:
+        - Users
+      summary: Get All Users
+      description: Gets all Users in the current account and displays their ID      
+      operationId: get-users
+      responses:
+        '200':
+          description: Successfully retrieved Users
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+              examples:
+                $ref: '#/components/examples/SuccessfulRequest.json'
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'
   '/users/{id}':
     get:
       tags:
@@ -3319,7 +3341,7 @@ paths:
               examples:
                 $ref: '#/components/examples/SuccessfulRequest.json'
         '400':
-          $ref: '#/components/responses/ERROR_4XX'          
+          $ref: '#/components/responses/ERROR_4XX'
 components:
   responses:
     POST_200:
