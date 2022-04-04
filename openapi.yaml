@@ -626,7 +626,7 @@ paths:
                   description: User ID of each User to be notified
                   uniqueItems: true
                   items:
-                    type: string
+                    type: integer
                     example: 1234
                 cc_emails:
                   type: array
@@ -786,38 +786,12 @@ paths:
                     $ref: ./models/SuccessStatus.yaml
         '400':
           $ref: '#/components/responses/ERROR_4XX'
-    get:
-      tags:
-        - Contacts
-      summary: Get Contact Debts
-      description: Retrieve all debts for a contact
-      operationId: getAllDebts
-      parameters:
-        - name: id
-          in: path
-          description: Id of Contact
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Successfully sent Form to Client
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-        '400':
-          $ref: '#/components/responses/ERROR_4XX'
   '/contacts/search_by_phone/{phone}':
     get:
       tags:
         - Contacts
       summary: Get Contact by Phone Number
+      description: Locate contact by phone number
       operationId: searchByPhone
       parameters:
         - name: phone
@@ -3232,7 +3206,7 @@ paths:
         - Contacts
       summary: Get Enrolled Debts
       description: Retrieve only enrolled debts for a contact
-      operationId: get-contacts-debts-enrolled
+      operationId: get-enrolled-debts
       parameters:
         - name: contact_id
           in: path
@@ -3256,6 +3230,96 @@ paths:
                 $ref: '#/components/examples/SuccessfulRequest.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+  '/contacts/{contact_id}/debts/notenrolled':
+    get:
+      tags:
+        - Contacts
+      summary: Get Unenrolled Debts
+      description: Retrieve only unenrolled debts for a contact
+      operationId: get-notenrolled-debts
+      parameters:
+        - name: contact_id
+          in: path
+          description: Id of Contact
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully retrieved Debts
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+              examples:
+                $ref: '#/components/examples/SuccessfulRequest.json'
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'
+  '/contacts/{contact_id}/debts/settled':
+    get:
+      tags:
+        - Contacts
+      summary: Get Settled Debts
+      description: Retrieve only settled debts for a contact
+      operationId: get-settled-debts
+      parameters:
+        - name: contact_id
+          in: path
+          description: Id of Contact
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully retrieved Debts
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+              examples:
+                $ref: '#/components/examples/SuccessfulRequest.json'
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'
+  '/contacts/{contact_id}/debts/notsettled':
+    get:
+      tags:
+        - Contacts
+      summary: Get Unsettled Debts
+      description: Retrieve only unsettled debts for a contact
+      operationId: get-notsettled-debts
+      parameters:
+        - name: contact_id
+          in: path
+          description: Id of Contact
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully retrieved Debts
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+              examples:
+                $ref: '#/components/examples/SuccessfulRequest.json'
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'          
 components:
   responses:
     POST_200:
