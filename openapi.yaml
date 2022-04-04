@@ -2612,7 +2612,7 @@ paths:
                     $ref: ./models/SuccessStatus.yaml
               examples:
                 Users:
-                  $ref: '#/components/examples/User.yaml'
+                  $ref: '#/components/examples/Users.yaml'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/users/{id}':
