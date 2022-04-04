@@ -2596,7 +2596,7 @@ paths:
       tags:
         - Users
       summary: Get All Users
-      description: Gets all Users in the current account and displays their ID      
+      description: Gets all Users in the current account and displays their ID
       operationId: get-users
       responses:
         '200':
@@ -2642,7 +2642,7 @@ paths:
                     $ref: ./models/SuccessStatus.yaml
               examples:
                 User Example:
-                  $ref: '#/components/examples/User.json'
+                  $ref: '#/components/examples/User.yaml'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     put:
@@ -2678,7 +2678,7 @@ paths:
                     $ref: ./models/SuccessStatus.yaml
               examples:
                 User Example:
-                  $ref: '#/components/examples/User.json'
+                  $ref: '#/components/examples/User.yaml'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     delete:
@@ -2794,7 +2794,7 @@ paths:
                     $ref: ./models/SuccessStatus.yaml
               examples:
                 User Example:
-                  $ref: '#/components/examples/User.json'
+                  $ref: '#/components/examples/User.yaml'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/users/{id}/tasks':
@@ -4545,7 +4545,7 @@ components:
           name: API Demo Team
         status:
           code: 200
-    User.json:
+    User.yaml:
       value:
         response:
           object: user
@@ -5575,6 +5575,41 @@ components:
           '25': Email
           '103': Schedule Change
           '277': Customer Portal
+        status:
+          code: 200
+    Users.yaml:
+      value:
+        response:
+          - id: '4941234'
+            created: '2019-10-01 17:35:49'
+            company:
+              id: '12345'
+              name: API Test Company
+            role:
+              id: '29399'
+              name: Super Admin
+            username: dpp
+            firstname: Debt
+            lastname: PayPro
+            email: dpp@debtpaypro.com
+            last_login: '2022-03-29 12:08:06'
+            active: true
+            deleted: false
+          - id: '4951234'
+            created: '2019-10-02 02:41:18'
+            company:
+              id: '12345'
+              name: API Test Company
+            role:
+              id: '29399'
+              name: Super Admin
+            username: TstUser
+            firstname: Test
+            lastname: User
+            email: tstuser@debtpaypro.com
+            last_login: '2022-04-04 14:18:17'
+            active: true
+            deleted: false
         status:
           code: 200
 security:
