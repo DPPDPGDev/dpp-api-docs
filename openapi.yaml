@@ -1151,7 +1151,6 @@ paths:
     get:
       tags:
         - Contacts
-        - Tasks
       summary: Get All Tasks
       description: Retrieve all tasks for a contact
       operationId: get-all-tasks
