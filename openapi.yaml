@@ -9,8 +9,8 @@ info:
 servers:
   - url: 'https://api.debtpaypro.com/v1'
     description: Production
-  - url: 'https://staging4-api.debtpaypro.com/v1'
-    description: staging4
+  - url: 'https://staging1-api.debtpaypro.com/v1'
+    description: staging1
 tags:
   - name: Auth
   - name: Calls
@@ -3343,6 +3343,45 @@ paths:
                 $ref: '#/components/examples/SuccessfulRequest.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+  /lookups/institution:
+    post:
+      tags:
+        - Lookups
+      summary: Validate Routing Number
+      description: Verifies that Routing Number is valid.
+      operationId: validateRteNum
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                routing_number:
+                  description: Nine(9) digit U.S. Routing Number
+                  type: integer
+              required:
+                - routing_number
+            examples:
+              POST_Example:
+                value:
+                  routing_number: 123456789
+        required: true
+      responses:
+        '200':
+          description: Successfully Validated Routing Number
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+              examples:
+                $ref: '#/components/examples/Institution.yaml'
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'
 components:
   responses:
     POST_200:
@@ -5611,6 +5650,17 @@ components:
             last_login: '2022-04-04 14:18:17'
             active: true
             deleted: false
+        status:
+          code: 200
+    Institution.yaml:
+      value:
+        response:
+          institution_type: bank
+          name: Chase Bank NA
+          address: 123 test street
+          city: Chicago
+          state: IL
+          zip: '40404'
         status:
           code: 200
 security:
