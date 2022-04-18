@@ -3139,7 +3139,7 @@ paths:
       operationId: post-contacts-contact_id-sms
       responses:
         '200':
-          description: OK
+          $ref: '#/components/responses/POST_200'
       description: Send SMS via API in order to use our API integration with outside platforms.
       requestBody:
         content:
