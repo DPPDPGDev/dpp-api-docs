@@ -3132,12 +3132,9 @@ paths:
         name: contact_id
         in: path
         required: true
-    get:
-      summary: ''
-      tags: []
-      responses: {}
-      operationId: get-contacts-contact_id-sms
     post:
+      tags:
+        - SMS
       summary: Send SMS
       operationId: post-contacts-contact_id-sms
       responses:
