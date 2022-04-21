@@ -3384,6 +3384,118 @@ paths:
                 $ref: '#/components/examples/Institution.yaml'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+  '/events/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: Get Event Details
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    response:
+                      event_title: Meeting
+                      event_type: '3232'
+                      event_assignee: '3244'
+                      'event_details:':
+                        start_date: '2022-11-07 13:00:00'
+                        end_date: '2022-11-07 13:30:00'
+                        time_zone: Central
+                      location: San Diego Office
+                    status:
+                      code: 200
+                properties:
+                  response:
+                    type: object
+                    properties:
+                      event_title:
+                        type: string
+                        example: Meeting
+                      event_type:
+                        type: integer
+                        example: 3232
+                      event_assignee:
+                        type: integer
+                        example: 3244
+                      'event_details:':
+                        type: object
+                        properties:
+                          start_date:
+                            type: string
+                            example: '2022-11-07 13:00:00'
+                          end_date:
+                            type: string
+                            example: '2022-11-07 13:30:00'
+                          time_zone:
+                            type: string
+                            example: Central
+                      location:
+                        type: string
+                        example: San Diego Office
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 200
+              examples:
+                example:
+                  value:
+                    response:
+                      event_title: Meeting
+                      event_type: 3232
+                      event_assignee: 3244
+                      'event_details:':
+                        start_date: '2022-11-07 13:00:00'
+                        end_date: '2022-11-07 13:30:00'
+                        time_zone: Central
+                      location: San Diego Office
+                    status:
+                      code: 200
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    response:
+                      event_id: Event ID 24397597 not found
+                    status:
+                      code: 400
+                properties:
+                  response:
+                    type: object
+                    properties:
+                      error:
+                        type: string
+                        example: Event ID 24397597 not found
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 400
+              examples:
+                example:
+                  value:
+                    response:
+                      error: Event ID 24397597 not found
+                    status:
+                      code: 400
+      operationId: get-events-id
+      description: Returns details for an event by ID.
 components:
   responses:
     POST_200:
