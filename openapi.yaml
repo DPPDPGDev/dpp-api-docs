@@ -3125,11 +3125,11 @@ paths:
                                 type: object
         '400':
           $ref: '#/components/responses/ERROR_4XX'
-  '/contacts/{contact_id}/sms':
+  '/contacts/{id}/sms':
     parameters:
       - schema:
           type: string
-        name: contact_id
+        name: id
         in: path
         required: true
     post:
@@ -3173,12 +3173,7 @@ paths:
                       minLength: 1
                 external_forms:
                   type: object
-                  required:
-                    - send_form
                   properties:
-                    send_form:
-                      type: string
-                      minLength: 1
                     form_id:
                       type: string
                       minLength: 1
@@ -3194,9 +3189,8 @@ paths:
                     message_template: '3323'
                     message_text: Your next payment of $300.00 will process on 1/2022
                   external_forms:
-                    send_form: '1'
                     form_id: '3332'
-        description: The `message` and `external_forms` arguments should be JSON strings sent in the request body type `form-data` or `x-www-form-urlencoded`.
+        description: ''
   '/creditors/{id}':
     get:
       tags:
