@@ -103,7 +103,7 @@ paths:
                   sdate: '2019-08-24'
                   call_type: Outgoing
                   call_result: Busy
-                  call_disposition: '1'
+                  call_disposition: '6'
                   notes: Lorem Ipsum
                   status_change: 274158
                   duration: '00:01:15'
@@ -116,6 +116,7 @@ paths:
                   contactID: 475956560
                   call_type: Outgoing
                   call_result: Busy
+                  call_disposition: '6'
       responses:
         '200':
           $ref: '#/components/responses/POST_200'

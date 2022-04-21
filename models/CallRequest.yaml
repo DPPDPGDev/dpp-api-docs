@@ -72,3 +72,4 @@ required:
   - contactID
   - call_type
   - call_result
+  - call_disposition
