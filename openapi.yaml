@@ -3140,6 +3140,74 @@ paths:
       responses:
         '200':
           $ref: '#/components/responses/POST_200'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    response:
+                      sms: 'Exception. Error: SMS Log Error: Field is required: sms_id'
+                    status:
+                      code: 400
+                properties:
+                  response:
+                    type: object
+                    properties:
+                      sms:
+                        type: string
+                        example: 'Exception. Error: SMS Log Error: Field is required: sms_id'
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 400
+              examples:
+                example-1:
+                  value:
+                    response:
+                      sms: 'Exception. Error: SMS Log Error: Field is required: sms_id'
+                    status:
+                      code: 400
+        '':
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    response:
+                      body: Message Sent
+                      message: LOREM IPSUM DOLOR SIT AMET
+                    status:
+                      code: 200
+                properties:
+                  response:
+                    type: object
+                    properties:
+                      body:
+                        type: string
+                        example: Message Sent
+                      message:
+                        type: string
+                        example: LOREM IPSUM DOLOR SIT AMET
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 200
+              examples:
+                example-1:
+                  value:
+                    response:
+                      body: Message Sent
+                      message: LOREM IPSUM DOLOR SIT AMET
+                    status:
+                      code: 200
       description: Send SMS via API in order to use our API integration with outside platforms.
       requestBody:
         content:
