@@ -1181,6 +1181,66 @@ paths:
                   - status
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+  '/contacts/{id}/sms':
+    post:
+      tags:
+        - Contacts
+        - SMS
+      summary: Send SMS
+      description: Sends SMS Text message to contact
+      operationId: postSMSmsg
+      parameters:
+        - name: id
+          in: path
+          description: Id of Contact to send SMS Text message to
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              x-examples:
+                example-1:
+                  from_number_id: '4232'
+                  message:
+                    message_template: '3323'
+                    message_text: lorem ipsum
+                  external_forms:
+                    form_id: '3332'
+              properties:
+                from_number_id:
+                  type: string
+                message:
+                  type: object
+                  properties:
+                    message_template:
+                      type: string
+                    message_text:
+                      type: string
+                external_forms:
+                  type: object
+                  properties:
+                    form_id:
+                      type: string
+              required:
+                - from_number_id
+                - message
+            examples:
+              POST Example:
+                value:
+                  from_number_id: '4232'
+                  message:
+                    message_template: '3323'
+                    message_text: lorem ipsum
+                  external_forms:
+                    form_id: '3332'
+      responses:
+        '200':
+          $ref: '#/components/responses/POST_200'
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{id}/smslog':
     get:
       tags:
