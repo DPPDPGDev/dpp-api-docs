@@ -28,6 +28,7 @@ properties:
   sdate:
     type: string
     format: date
+    example: '2022-03-27'
   created_at:
     type: string
     format: date-time
@@ -53,7 +54,8 @@ properties:
   duration:
     type: string
     format: duration
-    example: '00:01:15'
+    pattern: /^\d+:\d{2}:\d{2}$/gm
+    default: '00:01:27'
   event_id:
     type: integer
     example: 8179

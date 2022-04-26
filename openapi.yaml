@@ -10,7 +10,7 @@ servers:
   - url: 'https://api.debtpaypro.com/v1'
     description: Production
   - url: 'https://staging11-api.debtpaypro.com/v1'
-    description: Staging11    
+    description: Staging11
 tags:
   - name: Auth
   - name: Calls
@@ -106,7 +106,7 @@ paths:
                   call_disposition: '6'
                   notes: Lorem Ipsum
                   status_change: 274158
-                  duration: '00:01:15'
+                  duration: '01:00:00'
                   event_id: 8179
                   dialer_id: 1
                   recording_url: 'https://stairwork.ru/test.mp3'
@@ -3480,11 +3480,6 @@ components:
               status:
                 $ref: ./models/SuccessStatus.yaml
   parameters:
-    id:
-      name: id
-      in: query
-      schema:
-        type: integer
     version:
       name: version
       in: header
@@ -4622,7 +4617,7 @@ components:
                 value: '476723502'
         status:
           code: 200
-    AllTeams.json:
+    AllTeams.yaml:
       value:
         response:
           - team_id: '123'
