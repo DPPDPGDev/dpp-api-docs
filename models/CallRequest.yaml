@@ -54,8 +54,8 @@ properties:
   duration:
     type: string
     format: duration
-    pattern: /^\d+:\d{2}:\d{2}$/gm
     default: '00:01:27'
+    pattern: 'hh:mm:ss'
   event_id:
     type: integer
     example: 8179

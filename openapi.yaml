@@ -106,7 +106,7 @@ paths:
                   call_disposition: '6'
                   notes: Lorem Ipsum
                   status_change: 274158
-                  duration: '01:00:00'
+                  duration: '00:01:27'
                   event_id: 8179
                   dialer_id: 1
                   recording_url: 'https://stairwork.ru/test.mp3'
