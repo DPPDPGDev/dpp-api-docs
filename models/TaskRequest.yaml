@@ -59,10 +59,8 @@ properties:
     type: string
     example: Title
   assigned_to:
-    type: object
     oneOf:
-      - type: object
-        title: User
+      - title: User
         properties:
           object:
             type: string
@@ -71,8 +69,7 @@ properties:
           id:
             type: integer
             default: 51494
-      - type: object
-        title: Team
+      - title: Team
         properties:
           object:
             type: string
@@ -81,8 +78,7 @@ properties:
           id:
             type: integer
             default: 212
-      - type: object
-        title: Contact
+      - title: Contact
         properties:
           object:
             type: string
@@ -91,10 +87,12 @@ properties:
           id:
             type: integer
             default: ''
+    type: object
 required:
   - contact_id
   - task_name
   - defined_task
   - task_due_date
   - task_note
+  - title
   - assigned_to
