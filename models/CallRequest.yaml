@@ -41,7 +41,6 @@ properties:
     example: Outgoing
   call_disposition:
     type: string
-    example: '1'
     description: |-
       <span>This field accepts integers in string form that correspond to a "call result" message. The following "call_disposition" = "call_result" associations are set in the UI by default:
       <ul style="margin-left:1rem;">

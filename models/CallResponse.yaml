@@ -40,7 +40,6 @@ properties:
     example: Outgoing
   call_disposition:
     type: string
-    example: '1'
   notes:
     type: string
     example: Lorem Ipsum
