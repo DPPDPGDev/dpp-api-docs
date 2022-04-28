@@ -42,6 +42,21 @@ properties:
   call_disposition:
     type: string
     example: '1'
+    description: |-
+      <span>This field accepts integers in string form that correspond to a "call result" message. The following "call_disposition" = "call_result" associations are set in the UI by default:
+      <ul style="margin-left:1rem;">
+        1 = No Answer </br>
+        2 = Connected </br>
+        3 = Left Message </br>
+        4 = Wrong Number </br>
+        5 = Disconnected </br>
+        6 = Busy </br>
+        7 = Hung Up </br>
+        8 = Do Not Contact </br>
+        9 = Already In Program </br>
+      </ul>
+      <p></p>
+      </span>
   notes:
     type: string
     example: Lorem Ipsum
