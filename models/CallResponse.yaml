@@ -38,9 +38,6 @@ properties:
       - Outgoing
       - Incoming
     example: Outgoing
-  call_result:
-    type: string
-    example: Busy
   call_disposition:
     type: string
     example: '1'

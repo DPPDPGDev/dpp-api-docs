@@ -39,9 +39,6 @@ properties:
       - Outgoing
       - Incoming
     example: Outgoing
-  call_result:
-    type: string
-    example: Busy
   call_disposition:
     type: string
     example: '1'
@@ -73,5 +70,4 @@ properties:
 required:
   - contactID
   - call_type
-  - call_result
   - call_disposition
