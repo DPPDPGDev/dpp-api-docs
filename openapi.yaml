@@ -151,6 +151,8 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
     put:
       tags:
         - Calls
@@ -186,21 +188,15 @@ paths:
             type: integer
       responses:
         '200':
-          description: Successfully Updated a Call Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    $ref: ./models/CallResponse.yaml
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                CallExample:
-                  $ref: '#/components/examples/Call.json'
+          $ref: '#/components/responses/200'
         '400':
-          $ref: '#/components/responses/ERROR_4XX'
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
     delete:
       tags:
         - Calls
@@ -216,22 +212,15 @@ paths:
             type: integer
       responses:
         '200':
-          description: Successfully Deleted a Call Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                Calls DELETE 200 Response Example:
-                  value:
-                    status:
-                      code: 200
-                      message: Successfully deleted object
+          $ref: '#/components/responses/200'
         '400':
-          $ref: '#/components/responses/ERROR_4XX'
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
   /campaigns/e-mail:
     post:
       tags:
@@ -272,7 +261,13 @@ paths:
         '200':
           $ref: '#/components/responses/POST_200'
         '400':
-          $ref: '#/components/responses/ERROR_4XX'
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
   '/campaigns/e-mail/{id}':
     get:
       tags:
@@ -289,21 +284,15 @@ paths:
             type: integer
       responses:
         '200':
-          description: Successfully retrieved a Campaign Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    $ref: ./models/CampaignResponse.yaml
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                CampaignExample:
-                  $ref: '#/components/examples/Campaign.json'
+          $ref: '#/components/responses/200'
         '400':
-          $ref: '#/components/responses/ERROR_4XX'
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
     put:
       tags:
         - Campaigns
@@ -324,21 +313,15 @@ paths:
               $ref: ./models/CampaignResponse.yaml
       responses:
         '200':
-          description: Successfully updated a Campaign Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    $ref: ./models/CampaignResponse.yaml
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                CampaignExample:
-                  $ref: '#/components/examples/Campaign.json'
+          $ref: '#/components/responses/200'
         '400':
-          $ref: '#/components/responses/ERROR_4XX'
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
     delete:
       tags:
         - Campaigns
@@ -354,22 +337,15 @@ paths:
             type: integer
       responses:
         '200':
-          description: Successfully deleted Campaign Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                Campaign DELETE 200 Response Example:
-                  value:
-                    status:
-                      code: 200
-                      message: Successfully deleted object
+          $ref: '#/components/responses/200'
         '400':
-          $ref: '#/components/responses/ERROR_4XX'
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
   /contacts:
     post:
       tags:
@@ -468,7 +444,13 @@ paths:
         '200':
           $ref: '#/components/responses/POST_200'
         '400':
-          $ref: '#/components/responses/ERROR_4XX'
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
   '/contacts/{id}':
     get:
       tags:
@@ -485,21 +467,15 @@ paths:
             type: integer
       responses:
         '200':
-          description: Successfully retrieved a Contact Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    $ref: ./models/ContactResponse.yaml
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                ContactExample:
-                  $ref: '#/components/examples/Contact.json'
+          $ref: '#/components/responses/200'
         '400':
-          $ref: '#/components/responses/ERROR_4XX'
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
     put:
       tags:
         - Contacts
@@ -520,21 +496,15 @@ paths:
             type: integer
       responses:
         '200':
-          description: Successfully Updated a Contact Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    $ref: ./models/ContactResponse.yaml
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                ContactExample:
-                  $ref: '#/components/examples/Contact.json'
+          $ref: '#/components/responses/200'
         '400':
-          $ref: '#/components/responses/ERROR_4XX'
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
     delete:
       tags:
         - Contacts
@@ -550,22 +520,15 @@ paths:
             type: integer
       responses:
         '200':
-          description: Successfully deleted a Contact Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                Contact DELETE 200 Response Example:
-                  value:
-                    status:
-                      code: 200
-                      message: Successfully deleted object
+          $ref: '#/components/responses/200'
         '400':
-          $ref: '#/components/responses/ERROR_4XX'
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
   /contacts/notes/types:
     get:
       tags:
