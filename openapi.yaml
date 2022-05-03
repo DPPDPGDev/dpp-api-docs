@@ -139,21 +139,13 @@ paths:
             type: integer
       responses:
         '200':
-          description: Successfully retrieved a Call Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    $ref: ./models/CallResponse.yaml
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                CallExample:
-                  $ref: '#/components/examples/Call.json'
+          $ref: '#/components/responses/200'
         '400':
-          $ref: '#/components/responses/ERROR_4XX'
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
     put:
       tags:
         - Calls
