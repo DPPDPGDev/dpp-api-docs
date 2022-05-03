@@ -90,6 +90,7 @@ paths:
       operationId: callCreate
       tags:
         - Calls
+        - Response
       requestBody:
         description: ''
         required: true
@@ -123,6 +124,8 @@ paths:
           $ref: '#/components/responses/400'
         '403':
           $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
   '/calls/{id}':
     get:
       tags:
@@ -3445,9 +3448,6 @@ components:
         application/json:
           schema:
             $ref: ./models/Response.yaml
-          examples:
-            200-Response-Example:
-              $ref: '#/components/examples/200Response.yaml'
     '400':
       description: Bad Request
       content:
