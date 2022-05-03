@@ -117,7 +117,7 @@ paths:
                   call_disposition: '6'
       responses:
         '200':
-          $ref: '#/components/responses/POST_200'
+          $ref: '#/components/responses/200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/calls/{id}':
@@ -3444,7 +3444,7 @@ paths:
           $ref: '#/components/responses/ERROR_4XX'
 components:
   responses:
-    "200":
+    '200':
       description: Success
       content:
         application/json:
