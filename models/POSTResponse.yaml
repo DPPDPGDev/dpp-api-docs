@@ -1,0 +1,23 @@
+title: POST Response
+type: object
+properties:
+  response:
+    type: object
+    properties:
+      id:
+        type: object
+        properties:
+          success:
+            type: boolean
+          value:
+            type: integer
+          messages:
+            type: array
+            items:
+              type: object
+              properties: {}
+  status:
+    type: object
+    properties:
+      code:
+        type: integer
