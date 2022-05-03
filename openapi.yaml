@@ -3451,36 +3451,45 @@ components:
         application/json:
           schema:
             $ref: ./models/Response.yaml
+          examples:
+            200-Response-Example:
+              $ref: '#/components/examples/200Response.yaml'
     '400':
       description: Bad Request
       content:
         application/json:
           schema:
             $ref: ./models/Response.yaml
+          examples:
+            400-Response-Example:
+              $ref: '#/components/examples/400Response.yaml'
     '403':
       description: Authentication Error - Invalid Api-Key
       content:
         application/json:
           schema:
             $ref: ./models/Response.yaml
+          examples:
+            403-Response-Example:
+              $ref: '#/components/examples/403Response.yaml'
     '404':
       description: Not Found
       content:
         application/json:
           schema:
             $ref: ./models/Response.yaml
-    '500':
-      description: Internal Server Error
-      content:
-        application/json:
-          schema:
-            $ref: ./models/Response.yaml
+          examples:
+            404-Response-Example:
+              $ref: '#/components/examples/404Response.yaml'
     POST_200:
       description: Successful POST Request
       content:
         application/json:
           schema:
             $ref: ./models/POSTResponse.yaml
+          examples:
+            200-POST-Response-Example:
+              $ref: '#/components/examples/200POSTResponse.yaml'
     ERROR_4XX:
       description: An error has occurred
       content:
