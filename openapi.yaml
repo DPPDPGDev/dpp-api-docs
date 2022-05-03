@@ -3474,7 +3474,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: ./models/Response.yaml                
+            $ref: ./models/Response.yaml
     POST_200:
       description: Successful POST Request
       content:
@@ -5739,6 +5739,39 @@ components:
           city: Chicago
           state: IL
           zip: '40404'
+        status:
+          code: 200
+    200Response.yaml:
+      value:
+        status:
+          code: 200
+          message: Success
+        response: []
+    400Response.yaml:
+      value:
+        status:
+          code: 400
+          message: Bad Request
+        response: []
+    403Response.yaml:
+      value:
+        status:
+          code: 403
+          message: 'Authentication Error: Invalid Api-Key'
+        response: []
+    404Response.yaml:
+      value:
+        status:
+          code: 404
+          message: Not Found
+        response: []
+    200POSTResponse.yaml:
+      value:
+        response:
+          id:
+            success: true
+            value: 436373344
+            messages: []
         status:
           code: 200
 security:
