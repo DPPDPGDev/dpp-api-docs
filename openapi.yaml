@@ -1374,7 +1374,13 @@ paths:
         '200':
           $ref: '#/components/responses/POST_200'
         '400':
-          $ref: '#/components/responses/ERROR_4XX'
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
   '/debts/{id}':
     get:
       tags:
@@ -1391,21 +1397,15 @@ paths:
             type: integer
       responses:
         '200':
-          description: Successfully retrieved a Debt Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    $ref: ./models/DebtResponse.yaml
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                Debt Example:
-                  $ref: '#/components/examples/Debt.json'
+          $ref: '#/components/responses/200'
         '400':
-          $ref: '#/components/responses/ERROR_4XX'
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
     put:
       tags:
         - Debts
@@ -1426,21 +1426,15 @@ paths:
             type: integer
       responses:
         '200':
-          description: Successfully Updated a Debt Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    $ref: ./models/DebtResponse.yaml
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                Debt Example:
-                  $ref: '#/components/examples/Debt.json'
+          $ref: '#/components/responses/200'
         '400':
-          $ref: '#/components/responses/ERROR_4XX'
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
     delete:
       tags:
         - Debts
@@ -1456,22 +1450,15 @@ paths:
             type: integer
       responses:
         '200':
-          description: Successfully Deleted Debt Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                Debt DELETE 200 Response Example:
-                  value:
-                    status:
-                      code: 200
-                      message: Successfully deleted object
+          $ref: '#/components/responses/200'
         '400':
-          $ref: '#/components/responses/ERROR_4XX'
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
   '/debts/{id}/task':
     post:
       tags:
@@ -2034,8 +2021,13 @@ paths:
         '200':
           $ref: '#/components/responses/POST_200'
         '400':
-          $ref: '#/components/responses/ERROR_4XX'
-      x-internal: true
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
   '/loans/{id}':
     get:
       tags:
@@ -2052,22 +2044,15 @@ paths:
             type: integer
       responses:
         '200':
-          description: Successfully retrieved a Loan Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    $ref: ./models/LoanResponse.yaml
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                Loan Example:
-                  $ref: '#/components/examples/Loan.json'
+          $ref: '#/components/responses/200'
         '400':
-          $ref: '#/components/responses/ERROR_4XX'
-      x-internal: true
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
     put:
       tags:
         - Loans
@@ -2088,22 +2073,15 @@ paths:
               $ref: ./models/LoanResponse.yaml
       responses:
         '200':
-          description: Successfully updated a Loan Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    $ref: ./models/LoanResponse.yaml
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                Loan Example:
-                  $ref: '#/components/examples/Loan.json'
+          $ref: '#/components/responses/200'
         '400':
-          $ref: '#/components/responses/ERROR_4XX'
-      x-internal: true
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
     delete:
       tags:
         - Loans
@@ -2119,23 +2097,15 @@ paths:
             type: integer
       responses:
         '200':
-          description: Successfully deleted Loan Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                Loan DELETE 200 Response Example:
-                  value:
-                    status:
-                      code: 200
-                      message: Successfully deleted object
+          $ref: '#/components/responses/200'
         '400':
-          $ref: '#/components/responses/ERROR_4XX'
-      x-internal: true
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
   /settlement_offers:
     post:
       tags:
@@ -2182,7 +2152,13 @@ paths:
         '200':
           $ref: '#/components/responses/POST_200'
         '400':
-          $ref: '#/components/responses/ERROR_4XX'
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
   '/settlement_offers/{id}':
     get:
       tags:
@@ -2199,21 +2175,15 @@ paths:
             type: integer
       responses:
         '200':
-          description: Successfully retrieved a Settlement Offer Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    $ref: ./models/SettlementofferResponse.yaml
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                Settlement Offer Example:
-                  $ref: '#/components/examples/SettlementOffer.json'
+          $ref: '#/components/responses/200'
         '400':
-          $ref: '#/components/responses/ERROR_4XX'
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
     put:
       tags:
         - Settlement_Offers
