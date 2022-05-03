@@ -3444,6 +3444,12 @@ paths:
           $ref: '#/components/responses/ERROR_4XX'
 components:
   responses:
+    # 200:
+    #   description: Success
+    #   content:
+    #     application/json:
+    #       schema: object
+
     POST_200:
       description: Successful POST Request
       content:
