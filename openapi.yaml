@@ -3461,7 +3461,7 @@ components:
             400-Response-Example:
               $ref: '#/components/examples/400Response.yaml'
     '403':
-      description: Authentication Error - Invalid Api-Key
+      description: Authentication Error
       content:
         application/json:
           schema:
@@ -3479,7 +3479,7 @@ components:
             404-Response-Example:
               $ref: '#/components/examples/404Response.yaml'
     POST_200:
-      description: Successful POST Request
+      description: Success
       content:
         application/json:
           schema:
@@ -3497,7 +3497,7 @@ components:
               status:
                 $ref: ./models/ErrorStatus.yaml
     GET_200:
-      description: Successful GET Request
+      description: Success
       content:
         application/json:
           schema:
