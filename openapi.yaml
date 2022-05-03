@@ -3448,6 +3448,9 @@ components:
         application/json:
           schema:
             $ref: ./models/Response.yaml
+          examples:
+            200-Response-Example:
+              $ref: '#/components/examples/200Response.yaml'
     '400':
       description: Bad Request
       content:
