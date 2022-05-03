@@ -126,6 +126,8 @@ paths:
           $ref: '#/components/responses/403'
         '404':
           $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
   '/calls/{id}':
     get:
       tags:
@@ -3478,6 +3480,15 @@ components:
           examples:
             404-Response-Example:
               $ref: '#/components/examples/404Response.yaml'
+    '500':
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: ./models/Response.yaml
+          examples:
+            404-Response-Example:
+              $ref: '#/components/examples/500Response.yaml'
     POST_200:
       description: Success
       content:
@@ -5780,5 +5791,11 @@ components:
             messages: []
         status:
           code: 200
+    500Response.yaml:
+      value:
+        status:
+          code: 500
+          message: Internal Server Error
+        response: []
 security:
   - API-Key: []
