@@ -5760,7 +5760,7 @@ components:
       value:
         status:
           code: 403
-          message: 'Authentication Error: Invalid Api-Key'
+          message: Authentication Error
         response: []
     404Response.yaml:
       value:
