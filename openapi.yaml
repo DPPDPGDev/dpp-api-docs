@@ -3450,6 +3450,30 @@ components:
         application/json:
           schema:
             $ref: ./models/ResponseCode.yaml
+    '400':
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            $ref: ./models/ResponseCode.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ./models/ResponseCode.yaml
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ./models/ResponseCode.yaml
+    '500':
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: ./models/ResponseCode.yaml                
     POST_200:
       description: Successful POST Request
       content:
