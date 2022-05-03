@@ -118,9 +118,11 @@ paths:
                   call_disposition: '6'
       responses:
         '200':
-          $ref: '#/components/responses/200'
+          $ref: '#/components/responses/POST_200'
         '400':
-          $ref: '#/components/responses/ERROR_4XX'
+          $ref: '#/components/responses/400'
+        '403':
+          $ref: '#/components/responses/403'
   '/calls/{id}':
     get:
       tags:
