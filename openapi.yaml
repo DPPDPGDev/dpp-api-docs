@@ -28,6 +28,7 @@ tags:
   - name: DocumentTypes
   - name: Loans
   - name: Packages
+  - name: Response
   - name: Settlement_Offers
   - name: SMS
   - name: Tasks
@@ -3449,44 +3450,37 @@ components:
       content:
         application/json:
           schema:
-            $ref: ./models/ResponseCode.yaml
+            $ref: ./models/Response.yaml
     '400':
       description: Bad Request
       content:
         application/json:
           schema:
-            $ref: ./models/ResponseCode.yaml
-    '401':
-      description: Unauthorized
+            $ref: ./models/Response.yaml
+    '403':
+      description: Authentication Error - Invalid Api-Key
       content:
         application/json:
           schema:
-            $ref: ./models/ResponseCode.yaml
+            $ref: ./models/Response.yaml
     '404':
       description: Not Found
       content:
         application/json:
           schema:
-            $ref: ./models/ResponseCode.yaml
+            $ref: ./models/Response.yaml
     '500':
       description: Internal Server Error
       content:
         application/json:
           schema:
-            $ref: ./models/ResponseCode.yaml                
+            $ref: ./models/Response.yaml                
     POST_200:
       description: Successful POST Request
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              response:
-                type: object
-              status:
-                $ref: ./models/SuccessStatus.yaml
-          examples:
-            $ref: '#/components/examples/SuccessfulRequest.json'
+            $ref: ./models/POSTResponse.yaml
     ERROR_4XX:
       description: An error has occurred
       content:
