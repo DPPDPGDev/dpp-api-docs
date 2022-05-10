@@ -20,7 +20,7 @@ properties:
     readOnly: true
   contactID:
     type: integer
-    example: 475956560
+    example: 573142120
   userID:
     type: integer
     example: 3028014
