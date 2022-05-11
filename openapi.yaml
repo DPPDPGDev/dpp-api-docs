@@ -97,7 +97,7 @@ paths:
             examples:
               Request:
                 value:
-                  contactID: 573142120
+                  contactID: 560722588
                   sdate: '2019-08-24'
                   call_type: Outgoing
                   call_disposition: '6'
@@ -110,7 +110,7 @@ paths:
                   assigned_agent: 432156
               Required Parameters Only:
                 value:
-                  contactID: 573142120
+                  contactID: 560722588
                   call_type: Outgoing
                   call_disposition: '6'
       responses:
@@ -2166,7 +2166,7 @@ paths:
                   payback_amount: 0
                   rate: 0
                   payment: 0
-                  holdback_percent: 0.02
+                  holdback_percent: 2
                   payback_period: 0
                   frequency: D
                   freq_int: ''

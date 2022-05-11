@@ -74,8 +74,8 @@ properties:
     type: number
     example: 0
   holdback_percent:
-    type: number
-    example: .02%
+    type: integer
+    example: 2
   payback_period:
     type: integer
     example: 0
