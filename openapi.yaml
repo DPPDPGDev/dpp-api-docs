@@ -1824,7 +1824,17 @@ paths:
                   $ref: '#/components/examples/GeneratedDoc.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+        '403':
+          description: Forbidden
       x-internal: false
+    parameters:
+      - schema:
+          type: integer
+          example: 69
+        name: id
+        in: path
+        required: true
+        description: A valid template ID.
   /documents/types:
     get:
       tags:
