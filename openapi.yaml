@@ -100,6 +100,7 @@ paths:
                   contactID: 560722588
                   sdate: '2019-08-24'
                   call_type: Outgoing
+                  call_result: Busy
                   call_disposition: '6'
                   notes: Lorem Ipsum
                   status_change: 274158
@@ -112,6 +113,7 @@ paths:
                 value:
                   contactID: 560722588
                   call_type: Outgoing
+                  call_result: Busy
                   call_disposition: '6'
       responses:
         '200':
