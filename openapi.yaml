@@ -2165,7 +2165,7 @@ paths:
                   program_id: 0
                   loan_class: 1
                   loan_amount: 4550.72
-                  payback_amount: 0
+                  payback_amount: 100
                   rate: 0
                   payment: 0
                   holdback_percent: 2
@@ -2186,7 +2186,7 @@ paths:
                 value:
                   client_id: 382760691
                   loan_amount: 4550.72
-                  payback_amount: 0
+                  payback_amount: 100
       responses:
         '200':
           $ref: '#/components/responses/POST_200'
