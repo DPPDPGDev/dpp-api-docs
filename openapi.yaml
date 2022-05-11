@@ -1792,6 +1792,20 @@ paths:
           application/json:
             schema:
               $ref: models/DocumentGenerate.yaml
+            examples:
+              Request:
+                value:
+                  contact_id: 401548002
+                  debt_id: 129680505
+                  syndication_id: null
+                  order_id: null
+                  loan_id: null
+                  tags: {}
+                  signservice: clixsign
+              Required Fields Only:
+                value:
+                  contact_id: 357353146
+                  signservice: clixsign
         required: true
       responses:
         '200':
