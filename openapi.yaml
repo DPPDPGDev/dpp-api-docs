@@ -1861,11 +1861,11 @@ paths:
     parameters:
       - schema:
           type: integer
-          example: 69
+          example: 122629
         name: id
         in: path
-        required: true
         description: A valid template ID.
+        required: true
   /documents/types:
     get:
       tags:
