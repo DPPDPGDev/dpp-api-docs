@@ -1,6 +1,8 @@
 title: Loan
 type: object
 description: Loan Record
+x-tags:
+  - Loans
 properties:
   object:
     type: string
@@ -8,12 +10,12 @@ properties:
     readOnly: true
   id:
     type: integer
-    readOnly: true
     example: 1863358
+    readOnly: true
   acctID:
     type: integer
     example: 3863
-    readOnly: true  
+    readOnly: true
   tp_id:
     type: integer
     example: 0
@@ -37,7 +39,7 @@ properties:
     example: 382760691
   advance_type:
     type: string
-    example: "ACH"
+    example: ACH
   advance_date:
     type: string
     format: date
@@ -64,37 +66,37 @@ properties:
     example: 4550.72
   payback_amount:
     type: number
-    example: 0.00
+    example: 0
   rate:
     type: number
-    example: 0.00
+    example: 0
   payment:
     type: number
-    example: 0.00
+    example: 0
   holdback_percent:
-    type: number
+    type: integer
     example: .02%
   payback_period:
     type: integer
     example: 0
   frequency:
     type: string
-    example: "D"
+    example: D
   freq_int:
     type: string
-    example: ""
+    example: ''
   period_amount:
     type: number
-    example: 0.00
+    example: 0
   fees:
     type: number
-    example: 0.00
+    example: 0
   conf_num:
     type: string
-    example: "12345"
+    example: '12345'
   underwriter_notes:
     type: string
-    example: "Lorem Ipsum"
+    example: Lorem Ipsum
   contract_date:
     type: string
     format: date
@@ -128,5 +130,3 @@ required:
   - client_id
   - loan_amount
   - payback_amount
-x-tags:
-  - Loans
