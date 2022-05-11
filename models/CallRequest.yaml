@@ -3,23 +3,7 @@ type: object
 description: Call Record Object
 x-tags:
   - Calls
-examples:
-  - contactID: 573142120
-    sdate: '2019-08-24'
-    call_type: Outgoing
-    call_result: Busy
-    call_disposition: '6'
-    notes: Lorem Ipsum
-    status_change: 274158
-    duration: '00:01:15'
-    event_id: 8179
-    dialer_id: 1
-    recording_url: 'https://stairwork.ru/test.mp3'
-    assigned_agent: 432156
-  - contactID: 573142120
-    call_type: Outgoing
-    call_result: Busy
-    call_disposition: '6'
+examples: []
 properties:
   object:
     type: string
