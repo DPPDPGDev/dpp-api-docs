@@ -6,7 +6,7 @@ x-tags:
 properties:
   object:
     type: string
-    example: "settlement_offer"
+    example: settlement_offer
     readOnly: true
   id:
     type: integer
@@ -31,17 +31,16 @@ properties:
     readOnly: true
   created_by:
     $ref: ../models/UserResponse.yaml
-    readOnly: true
   modified_at:
     type: string
     format: date-time
     readOnly: true
   neg_id:
     type: string
-    example: "6033912"
+    example: '6033912'
   madeby:
     type: string
-    example: "Creditor"
+    example: Creditor
   offer_status:
     type: integer
     example: 1
@@ -59,6 +58,7 @@ properties:
     example: 8500.55
   settlement_amount:
     type: integer
+    minimum: 1
   settlement_fee:
     type: integer
     example: 25
