@@ -4,10 +4,6 @@ description: ''
 x-tags:
   - Documents
 properties:
-  id:
-    type: integer
-    description: ID of Document Template
-    readOnly: true
   contact_id:
     type: string
     example: '534512161'
@@ -29,6 +25,5 @@ properties:
     type: string
     default: clixsign
 required:
-  - id
   - contact_id
   - signservice
