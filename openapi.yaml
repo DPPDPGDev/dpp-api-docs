@@ -1908,11 +1908,32 @@ paths:
           required: true
           schema:
             type: string
+        - schema:
+            type: integer
+            example: 69
+          in: query
+          name: id
+          description: A valid template ID
+          required: true
       requestBody:
         content:
           application/json:
             schema:
               $ref: models/DocumentGenerate.yaml
+            examples:
+              Request:
+                value:
+                  contact_id: 401548002
+                  debt_id: 129680505
+                  syndication_id: null
+                  order_id: null
+                  loan_id: null
+                  tags: {}
+                  signservice: clixsign
+              Required Fields Only:
+                value:
+                  contact_id: 357353146
+                  signservice: clixsign
         required: true
       responses:
         '200':
@@ -1931,7 +1952,41 @@ paths:
                   $ref: '#/components/examples/GeneratedDoc.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    status:
+                      code: 403
+                      message: template not found
+                    response: []
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 403
+                      message:
+                        type: string
+                        example: template not found
+                  response:
+                    type: array
+                    items:
+                      type: object
       x-internal: false
+    parameters:
+      - schema:
+          type: integer
+          example: 122629
+        name: id
+        in: path
+        description: A valid template ID.
+        required: true
   /documents/types:
     get:
       tags:
