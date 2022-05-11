@@ -1787,6 +1787,13 @@ paths:
           required: true
           schema:
             type: string
+        - schema:
+            type: integer
+            example: 69
+          in: query
+          name: id
+          description: A valid template ID
+          required: true
       requestBody:
         content:
           application/json:
@@ -1826,6 +1833,30 @@ paths:
           $ref: '#/components/responses/ERROR_4XX'
         '403':
           description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    status:
+                      code: 403
+                      message: template not found
+                    response: []
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 403
+                      message:
+                        type: string
+                        example: template not found
+                  response:
+                    type: array
+                    items:
+                      type: object
       x-internal: false
     parameters:
       - schema:
