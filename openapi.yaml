@@ -2045,7 +2045,7 @@ paths:
                   payback_amount: 0
                   rate: 0
                   payment: 0
-                  holdback_percent: 0.02
+                  holdback_percent: 2
                   payback_period: 0
                   frequency: D
                   freq_int: ''
