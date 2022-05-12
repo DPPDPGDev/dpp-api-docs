@@ -2319,11 +2319,10 @@ paths:
                   offer_valid_date: '2019-08-24'
                   settlement_type: 2
                   debt_amount: 8500
-                  settlement_amount: 0
+                  settlement_amount: 100
                   settlement_fee: 0
                   notes: Lorem Ipsum
                   cred_cont_id: 0
-                  json: {}
               Required Parameters Only:
                 value:
                   contact_id: 382760691
@@ -2331,7 +2330,7 @@ paths:
                   offer_valid_date: '2019-08-24'
                   settlement_type: 1
                   debt_amount: 8500
-                  settlement_amount: 1
+                  settlement_amount: 100
                   creditor: 540
         required: true
         description: ''
