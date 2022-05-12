@@ -8,7 +8,7 @@ info:
     email: support@debtpaypro.com
 servers:
   - url: 'https://api.debtpaypro.com/v1'
-    description: Production
+    description: 'Production'
 tags:
   - name: Auth
   - name: Calls
