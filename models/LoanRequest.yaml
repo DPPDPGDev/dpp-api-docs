@@ -66,7 +66,8 @@ properties:
     example: 4550.72
   payback_amount:
     type: number
-    example: 0
+    example: 100
+    minimum: 1
   rate:
     type: number
     example: 0
