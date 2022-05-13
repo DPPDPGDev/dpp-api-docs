@@ -8,7 +8,7 @@ info:
     email: support@debtpaypro.com
 servers:
   - url: 'https://api.debtpaypro.com/v1'
-    description: 'Production'
+    description: Production
 tags:
   - name: Auth
   - name: Calls
@@ -1305,10 +1305,10 @@ paths:
                   external_forms:
                     form_id: '3332'
       responses:
-        '200':
-          $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+        '403':
+          $ref: '#/components/responses/POST_200'
   '/contacts/{id}/smslog':
     get:
       tags:
