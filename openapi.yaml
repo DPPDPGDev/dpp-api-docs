@@ -1292,6 +1292,7 @@ paths:
                   properties:
                     form_id:
                       type: integer
+                      example: 18683
               required:
                 - from_number_id
                 - message
@@ -1303,7 +1304,7 @@ paths:
                     message_template: 15223
                     message_text: lorem ipsum
                   external_forms:
-                    form_id: '3332'
+                    form_id: 18683
       responses:
         '400':
           $ref: '#/components/responses/ERROR_4XX'
