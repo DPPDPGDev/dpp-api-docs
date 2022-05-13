@@ -1276,28 +1276,31 @@ paths:
                     form_id: '3332'
               properties:
                 from_number_id:
-                  type: string
+                  type: integer
+                  example: 12448
                 message:
                   type: object
                   properties:
                     message_template:
-                      type: string
+                      type: integer
+                      example: 15223
                     message_text:
                       type: string
+                      example: lorem ipsum
                 external_forms:
                   type: object
                   properties:
                     form_id:
-                      type: string
+                      type: integer
               required:
                 - from_number_id
                 - message
             examples:
               POST Example:
                 value:
-                  from_number_id: '4232'
+                  from_number_id: 12448
                   message:
-                    message_template: '3323'
+                    message_template: 15223
                     message_text: lorem ipsum
                   external_forms:
                     form_id: '3332'
