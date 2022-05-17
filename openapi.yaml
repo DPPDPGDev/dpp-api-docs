@@ -10,7 +10,7 @@ servers:
   - url: 'https://api.debtpaypro.com/v1'
     description: Production
   - url: 'https://staging4-api.debtpaypro.com/v1'
-    description: Staging4  
+    description: Staging4
 tags:
   - name: Auth
   - name: Calls
@@ -1599,24 +1599,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ./models/DebtTaskRequest.yaml        
-      # requestBody:
-      #   content:
-      #     application/json:
-      #       schema:
-      #         type: object
-      #         properties:
-      #           assigned_to:
-      #             type: object
-      #             properties:
-      #               id:
-      #                 type: integer
-      #               type:
-      #                 type: string
-      #           defined_task:
-      #             type: integer
-      #           task_name:
-      #             type: string
+              $ref: ./models/DebtTaskRequest.yaml
       responses:
         '200':
           description: Successfully created a Debt Task
@@ -1629,6 +1612,9 @@ paths:
                     $ref: models/DebtTask.yaml
                   status:
                     $ref: models/SuccessStatus.yaml
+              examples:
+                Debt Task Response Example:
+                  $ref: '#/components/examples/DebtTask.yaml'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
       x-internal: false
@@ -1660,14 +1646,19 @@ paths:
             type: integer
       responses:
         '200':
-          description: Successfully Updated Debt Task
+          description: Successfully Updated a Debt Task
           content:
             application/json:
               schema:
                 type: object
                 properties:
+                  response:
+                    $ref: ./models/DebtTask.yaml
                   status:
                     $ref: ./models/SuccessStatus.yaml
+              examples:
+                Debt Task Response Example:
+                  $ref: '#/components/examples/DebtTask.yaml'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     delete:
@@ -1734,6 +1725,9 @@ paths:
                     type: object
                   status:
                     $ref: ./models/SuccessStatus.yaml
+              examples:
+                Debt Tasks List All:
+                  $ref: '#/components/examples/DebtTasksGetAll.yaml'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/debts/{id}/notes':
@@ -5828,6 +5822,307 @@ components:
           city: Chicago
           state: IL
           zip: '40404'
+        status:
+          code: 200
+    DebtTask.yaml:
+      value:
+        debt:
+          object: debt
+          id: 124507509
+          acctID: 3863
+          created_at: '2019-08-24T14:15:22Z'
+          modified_at: '2019-08-24T14:15:22Z'
+          modified_by: 0
+          original_debt_amount: 10500
+          current_debt_amount: 9499.5
+          current_payment: 153
+          current_rate: 0
+          notes: debt note
+          verified_debt_amount: 0
+          creditor: 540
+          debt_buyer: 17576331
+          poa_sent_date: '2019-08-24'
+          legal_account: 'No'
+          last_payment_date: '2019-08-24'
+          last_payment_amount: 0
+          opened_date: '2019-08-24'
+          available_balance: 0
+          enrolled: false
+          has_summons: true
+          enrolled_date: '2019-08-24'
+          debt_type: 0
+          debt_status: ''
+          locked: false
+          og_account_num: '12345674445'
+          creditor_account_num: ''
+          settled: false
+          settlement_id: 0
+          client_id: 382760691
+          settlement_offers:
+            - string
+          customs:
+            - value: []
+        debt_task_id: 0
+        task:
+          object: task
+          id: 32549869
+          acctID: 3863
+          contact_id: 516553837
+          task_created_date: '2019-08-24T14:15:22Z'
+          task_name: Task Name
+          defined_task: 25907
+          created_by:
+            object: user
+            id: 6033912
+            acctID: 3863
+            company_id: 42128
+            parent_id: 4950368
+            user_type: 1
+            created: '2021-01-13 12:47:25'
+            user_name: API_User123
+            firstname: John
+            lastname: Doe
+            company: Acme
+            email: mail@debtpaypro.com
+            active: true
+            role: 29399
+            attorney: true
+            payee_id: 23006
+            del: 0
+            delTime: '2021-01-13 12:47:25'
+            pass_reset: true
+          task_due_date: '2019-08-24'
+          task_note: Task Note
+          list_id: 0
+          team_id: 0
+          task_completed: 0
+          task_completed_by: 0
+          task_completed_date: '2019-08-24T14:15:22Z'
+          task_completion_percentage: 0
+          task_status: 0
+          title: Title
+          assigned_to:
+            object: User
+            id: 51494
+    DebtTasksGetAll.yaml:
+      value:
+        response:
+          - object: task
+            id: '37171960'
+            acctID: '3863'
+            contact_id: '382760691'
+            task_created_date: '2022-05-17 15:30:44'
+            task_name: Dummy Task Name
+            defined_task: '25907'
+            created_by:
+              object: user
+              id: '4950368'
+              acctID: '3863'
+              company_id: '42128'
+              parent_id: '0'
+              user_type: '1'
+              created: '2019-10-02 02:41:18'
+              user_name: Greg
+              firstname: Greg
+              lastname: Johnson
+              company: ''
+              email: g.johnson@debtpaypro.com
+              active: '1'
+              role: '29399'
+              attorney: '0'
+              payee_id: '0'
+              del: '0'
+              delTime: null
+              pass_reset: '0'
+            task_due_date: '2022-08-24'
+            task_note: Dummy Task Note
+            list_id: '0'
+            team_id: '0'
+            task_completed: '0'
+            task_completed_by: null
+            task_completed_date: ''
+            task_completion_percentage: '0'
+            task_status: '0'
+            title: Dummy Task Name
+            task_type: '0'
+            assigned_to:
+              object: contact
+              id: '382760691'
+              acctID: '3863'
+              company_id: '42128'
+              file_type: '1'
+              form_id: '18626'
+              created: '2020-07-01 00:00:00'
+              created_by: '4950368'
+              modified: '2022-03-28 15:21:30'
+              modified_by: '4950368'
+              assigned_to: '4950368'
+              campaign_id: '128312'
+              attorney: '0'
+              attorney_id: '0'
+              attorney_id2: '0'
+              first_name: Hayao
+              middle_name: null
+              last_name: Miyazaki
+              salutation: null
+              title: null
+              phone_number: '13123839986'
+              phone_extension: null
+              cell_phone: '13123839986'
+              cell_extension: null
+              work_phone: '13123839986'
+              work_extension: null
+              address:
+                address1: 79 Totoro Rd.
+                address2: ''
+                address3: null
+                city: Chicago
+                state: IL
+                zip: '60614'
+              email: ''
+              social_security_number: '551192922'
+              date_of_birth: '19410312'
+              language: '1'
+              submitted: '1'
+              submitted_by: '4950368'
+              submitted_at: '2022-01-08 10:33:36'
+              approved_by2: '4950368'
+              approved_date2: '2022-01-08'
+              rejected_by: '0'
+              rejected_notes: ''
+              paused_notes: ''
+              dropped_reason: '1'
+              grad_date: '0000-00-00'
+              total_debt: '0.00'
+              welcome_sent: '2020-02-21 16:23:29'
+              paper_statements: '0'
+              paper_welcome: '0'
+              gateway_id: '1'
+              gateway_approved_by: '0'
+              gateway_hold: '1'
+              gateway_hold_reason: '4'
+              gateway_hold_notes: ''
+              gateway_auth_received: '1'
+              gateway_auth_file: 66c29015-debtpaypro_Greg's_Test_Template_-_Chase_(xxxx4444).pdf
+              iscoapp: '0'
+              customs:
+                - label: Ad Campaign
+                  field_id: '430700'
+                  value: DPP-2710
+                  type: Text
+                - label: AGI
+                  field_id: '430703'
+                  value: Test AGI
+                  type: Text
+                - label: AGI (Spouse)
+                  field_id: '430706'
+                  value: Test AGI Spouse
+                  type: Text
+                - label: Alias
+                  field_id: '430709'
+                  value: Test Alias
+                  type: Text
+                - label: Bankruptcy
+                  field_id: '430712'
+                  value: 'No'
+                  type: Multiple Choice
+                - label: Bankruptcy Type
+                  field_id: '430715'
+                  value: Other
+                  type: Multiple Choice
+                - label: DL Number
+                  field_id: '430721'
+                  value: '123123123123'
+                  type: Text
+                - label: DL State
+                  field_id: '430724'
+                  value: IL
+                  type: State
+                - label: Employer
+                  field_id: '430727'
+                  value: IKEA
+                  type: Text
+                - label: Employer Address
+                  field_id: '430730'
+                  value: 1 Main St
+                  type: Text
+                - label: Employer Address2
+                  field_id: '430733'
+                  value: 2 Main St
+                  type: Text
+                - label: Employer City
+                  field_id: '430736'
+                  value: Schaumburg
+                  type: Text
+                - label: Employer State
+                  field_id: '430739'
+                  value: IL
+                  type: State
+                - label: Employer Zip
+                  field_id: '430742'
+                  value: '60614'
+                  type: Text
+                - label: Employment Type
+                  field_id: '430745'
+                  value: Full Time
+                  type: Multiple Choice
+                - label: Estimated Debt
+                  field_id: '430748'
+                  value: '$40,000 - $50,000'
+                  type: Multiple Choice
+                - label: Income Year
+                  field_id: '430760'
+                  value: '2014'
+                  type: Multiple Choice
+                - label: Length of Employment
+                  field_id: '430769'
+                  value: 4 Years
+                  type: Text
+                - label: Litigation/Arbitration
+                  field_id: '430772'
+                  value: 'No'
+                  type: Multiple Choice
+                - label: Marital Status
+                  field_id: '430778'
+                  value: Married Filing Jointly
+                  type: Multiple Choice
+                - label: Military Service
+                  field_id: '430781'
+                  value: 'Yes'
+                  type: Multiple Choice
+                - label: Pay Frequency
+                  field_id: '430787'
+                  value: Weekly
+                  type: Multiple Choice
+                - label: Position
+                  field_id: '430790'
+                  value: HVAC Tech
+                  type: Text
+                - label: Spouse Pay Frequency
+                  field_id: '430847'
+                  value: BiWeekly
+                  type: Multiple Choice
+                - label: Suffix
+                  field_id: '430850'
+                  value: Mr
+                  type: Text
+                - label: Tax Issues/Liens
+                  field_id: '430853'
+                  value: 'No'
+                  type: Multiple Choice
+                - label: Taxable Income
+                  field_id: '430856'
+                  value: 'Yes'
+                  type: Multiple Choice
+                - label: Third Party Administrator Selection
+                  field_id: '430859'
+                  value: Debt Pay Gateway
+                  type: Multiple Choice
+                - label: Wages Garnished
+                  field_id: '430862'
+                  value: 'Yes'
+                  type: Multiple Choice
+              linked_coapp: null
         status:
           code: 200
 security:
