@@ -1912,13 +1912,6 @@ paths:
           required: true
           schema:
             type: string
-        - schema:
-            type: integer
-            example: 69
-          in: query
-          name: id
-          description: A valid template ID
-          required: true
       requestBody:
         content:
           application/json:

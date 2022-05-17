@@ -5,25 +5,25 @@ x-tags:
   - Documents
 properties:
   contact_id:
-    type: string
-    example: '534512161'
+    type: integer
+    example: 534512161
   debt_id:
-    type: string
-    default: null
+    type: integer
+    default: 0
+  tags:
+    type: array
+    items: {}
   syndication_id:
-    type: string
+    type: integer
     default: null
   order_id:
-    type: string
+    type: integer
     default: null
   loan_id:
-    type: string
+    type: integer
     default: null
-  tags:
-    type: object
   signservice:
     type: string
     default: clixsign
 required:
   - contact_id
-  - signservice
