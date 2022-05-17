@@ -170,13 +170,6 @@ properties:
   iscoapp:
     type: boolean
     default: false
-  linked_coapp:
-    type: object
-    example: 1231231
-    properties:
-      id:
-        type: integer
-        example: 12341234
   customs:
     $ref: ../models/customfield.yaml
 required:
