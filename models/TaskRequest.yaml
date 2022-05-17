@@ -30,8 +30,8 @@ properties:
     type: integer
     example: 25907
   created_by:
-    readOnly: true
     $ref: ./UserResponse.yaml
+    readOnly: true
   task_due_date:
     type: string
     format: date

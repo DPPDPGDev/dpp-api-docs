@@ -1,0 +1,78 @@
+title: DebtTaskRequest
+type: object
+description: Task Record
+x-tags:
+  - Tasks
+properties:
+  object:
+    type: string
+    example: task
+    readOnly: true
+  id:
+    type: integer
+    example: 32549869
+    readOnly: true
+  acctID:
+    type: integer
+    example: 3863
+    readOnly: true
+  contact_id:
+    type: integer
+    example: 516553837
+  task_created_date:
+    type: string
+    format: date-time
+    readOnly: true
+  task_name:
+    type: string
+    example: Task Name
+  defined_task:
+    type: integer
+    example: 25907
+  task_due_date:
+    type: string
+    format: date
+  task_note:
+    type: string
+    example: Task Note
+  title:
+    type: string
+    example: Title
+  assigned_to:
+    oneOf:
+      - title: User
+        properties:
+          object:
+            type: string
+            default: User
+            value: User
+          id:
+            type: integer
+            default: 51494
+      - title: Team
+        properties:
+          object:
+            type: string
+            default: Team
+            value: Team
+          id:
+            type: integer
+            default: 212
+      - title: Contact
+        properties:
+          object:
+            type: string
+            default: Contact
+            value: Contact
+          id:
+            type: integer
+            default: ''
+    type: object
+required:
+  - contact_id
+  - task_name
+  - defined_task
+  - task_due_date
+  - task_note
+  - title
+  - assigned_to

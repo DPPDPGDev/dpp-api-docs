@@ -1600,7 +1600,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ./models/TaskRequest.yaml        
+              $ref: ./models/DebtTaskRequest.yaml        
       # requestBody:
       #   content:
       #     application/json:
