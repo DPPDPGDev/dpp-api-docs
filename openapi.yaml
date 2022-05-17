@@ -1461,6 +1461,7 @@ paths:
                   opened_date: '2019-08-24'
                   available_balance: 0
                   enrolled: false
+                  has_summons: true
                   enrolled_date: '2019-08-24'
                   debt_type: 0
                   debt_status: ''
