@@ -1645,17 +1645,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                assigned_to:
-                  description: 'The ID of the person(s) the Debt Task wil be assigned to. The Debt Task can be assigned to a User, Team, or Contact.'
-                  type: integer
-                defined_task:
-                  description: ''
-                  type: integer
-                task_name:
-                  description: Name for Debt Task
-                  type: string
+              $ref: ./models/DebtTaskUpdate.yaml
       parameters:
         - name: id
           in: path
