@@ -75,6 +75,9 @@ properties:
   enrolled:
     default: false
     type: boolean
+  has_summons:
+    type: boolean
+    default: true
   enrolled_date:
     type: string
     format: date
