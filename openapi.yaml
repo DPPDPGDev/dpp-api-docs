@@ -1596,22 +1596,28 @@ paths:
           required: true
           schema: {}
       requestBody:
+        required: true
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                assigned_to:
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                    type:
-                      type: string
-                defined_task:
-                  type: integer
-                task_name:
-                  type: string
+              $ref: ./models/TaskRequest.yaml        
+      # requestBody:
+      #   content:
+      #     application/json:
+      #       schema:
+      #         type: object
+      #         properties:
+      #           assigned_to:
+      #             type: object
+      #             properties:
+      #               id:
+      #                 type: integer
+      #               type:
+      #                 type: string
+      #           defined_task:
+      #             type: integer
+      #           task_name:
+      #             type: string
       responses:
         '200':
           description: Successfully created a Debt Task
