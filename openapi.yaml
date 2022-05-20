@@ -3674,6 +3674,142 @@ paths:
                     status:
                       code: 200
       operationId: get-ecampaigns-categories
+  /ecampaigns/share-list:
+    get:
+      summary: Get E-Campaign Share List
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    response:
+                      teams:
+                        - id: t_209
+                          name: Test
+                        - id: t_210
+                          name: New Test
+                        - id: t_211
+                          name: Test2
+                        - id: t_212
+                          name: DPP
+                        - id: t_2329
+                          name: TEST
+                        - id: t_2331
+                          name: NNT
+                        - id: t_2332
+                          name: QWE
+                        - id: t_2333
+                          name: eric team
+                        - id: t_2334
+                          name: INSTINCT
+                      users:
+                        - id: '72191'
+                          name: 'Anderlick, Rick'
+                        - id: '51494'
+                          name: 'bench, eric1'
+                        - id: '1854257'
+                          name: 'bench2, eric2'
+                        - id: '3519540'
+                          name: 'bench2, eric2'
+                        - id: '1854258'
+                          name: 'bench3, eric3'
+                        - id: '407'
+                          name: 'Cahue, Juan'
+                        - id: '504853'
+                          name: 'DeMario, Vanessa'
+                        - id: '385282'
+                          name: 'Dorsey, Kaitlyn'
+                        - id: '37002'
+                          name: 'Foster, Adam'
+                        - id: '40432'
+                          name: 'Jones, Jennifer'
+                        - id: '19'
+                          name: 'Kehler, Kris'
+                        - id: '20697'
+                          name: 'Kehler, Kris J'
+                        - id: '17399'
+                          name: 'Kehler, Megan'
+                        - id: '219674'
+                          name: 'King, Kenton'
+                        - id: '467731'
+                          name: 'Olszewski, Adam'
+                        - id: '1854254'
+                          name: 'permissions, no'
+                        - id: '571550'
+                          name: 'Peters, Ramona'
+                        - id: '168416'
+                          name: 'Pyne, Matt'
+                        - id: '544'
+                          name: 'Queen, Chris'
+                        - id: '571560'
+                          name: 'Steidl, Jim'
+                        - id: '2726423'
+                          name: 'test, deve4'
+                        - id: '450886'
+                          name: 'test, deve2'
+                        - id: '505015'
+                          name: 'test, deve3'
+                        - id: '97479'
+                          name: 'test, deve1'
+                        - id: '585478'
+                          name: 'USER, OTHER'
+                        - id: '54806'
+                          name: 'User, Test'
+                        - id: '490024'
+                          name: 'Wheeler, Travis'
+                        - id: '81293'
+                          name: 'Zagal, Aracely'
+                    status:
+                      code: 200
+                properties:
+                  response:
+                    type: object
+                    properties:
+                      teams:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              example: t_209
+                            name:
+                              type: string
+                              example: Test
+                      users:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              example: '72191'
+                            name:
+                              type: string
+                              example: 'Bloggs, Joe'
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+              examples:
+                Example:
+                  value:
+                    response:
+                      teams:
+                        - id: t_209
+                          name: Test
+                      users:
+                        - id: '72191'
+                          name: 'Bloggs, Joe'
+                    status:
+                      code: 200
+      operationId: get-ecampaigns-share-list
 components:
   responses:
     POST_200:
