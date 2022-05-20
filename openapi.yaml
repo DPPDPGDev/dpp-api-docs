@@ -3810,6 +3810,43 @@ paths:
                     status:
                       code: 200
       operationId: get-ecampaigns-share-list
+  /ecampaigns/can-create:
+    get:
+      summary: Check E-Campaign Permissions
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    response:
+                      permission: true
+                    status:
+                      code: 200
+                properties:
+                  response:
+                    type: object
+                    properties:
+                      permission:
+                        type: boolean
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 200
+              examples:
+                Example:
+                  value:
+                    response:
+                      permission: true
+                    status:
+                      code: 200
+      operationId: get-ecampaigns-can-create
 components:
   responses:
     POST_200:
