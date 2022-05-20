@@ -11,6 +11,14 @@ servers:
     description: Production
   - url: 'https://staging1-api.debtpaypro.com/v1'
     description: Staging1
+  - url: 'https://staging2-api.debtpaypro.com/v1'
+    description: Staging2
+  - url: 'https://staging3-api.debtpaypro.com/v1'
+    description: Staging3
+  - url: 'https://staging4-api.debtpaypro.com/v1'
+    description: Staging4
+  - url: 'https://staging5-api.debtpaypro.com/v1'
+    description: Staging5
 tags:
   - name: Auth
   - name: Calls
