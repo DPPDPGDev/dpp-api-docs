@@ -6124,5 +6124,14 @@ components:
               linked_coapp: null
         status:
           code: 200
+    Call_POST_Response.json:
+      value:
+        response:
+          id:
+            success: true
+            value: 443772814
+            messages: []
+        status:
+          code: 200
 security:
   - API-Key: []
