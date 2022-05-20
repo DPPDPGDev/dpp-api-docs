@@ -3877,6 +3877,39 @@ components:
                   attachments: []
                 status:
                   code: 200
+    EcampaignsDelete_522:
+      description: Example response
+      content:
+        application/json:
+          schema:
+            type: object
+            x-examples:
+              example-1:
+                status:
+                  code: 522
+                  message: Delete is not implemented
+                response: []
+            properties:
+              status:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 522
+                  message:
+                    type: string
+                    example: Delete is not implemented
+              response:
+                type: array
+                items:
+                  type: object
+          examples:
+            Example:
+              value:
+                status:
+                  code: 522
+                  message: Delete is not implemented
+                response: []
   parameters:
     version:
       name: version
