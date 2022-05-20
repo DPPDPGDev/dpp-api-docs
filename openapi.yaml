@@ -3617,7 +3617,7 @@ components:
                 type: object
               status:
                 $ref: ./models/SuccessStatus.yaml
-    Ecampaigns_200:
+    EcampaignsGet_200:
       description: Example response
       content:
         application/json:
@@ -3734,6 +3734,122 @@ components:
                     shared_with:
                       - '0'
                     attachments: []
+                status:
+                  code: 200
+    EcampaignsPost_200:
+      description: Example response
+      content:
+        application/json:
+          schema:
+            type: object
+            x-examples:
+              example-1:
+                response:
+                  object: etemplate
+                  id: 86769
+                  acctID: 5
+                  created_at: '2022-05-20 14:06:09'
+                  created_by: 51494
+                  modified_at: null
+                  modified_by: null
+                  category_id: 100
+                  title: New Title
+                  subject: New Subject
+                  body: New HTML Body
+                  plainbody: New Plaintext Body
+                  public: 0
+                  created_name: eric1 bench
+                  category_name: ''
+                  shared_with: []
+                  attachments: []
+                status:
+                  code: 200
+            properties:
+              response:
+                type: object
+                properties:
+                  object:
+                    type: string
+                    example: etemplate
+                  id:
+                    type: integer
+                    example: 86769
+                  acctID:
+                    type: integer
+                    example: 5
+                  created_at:
+                    type: string
+                    example: '2022-05-20 14:06:09'
+                  created_by:
+                    type: integer
+                    example: 51494
+                  modified_at:
+                    type: string
+                    example: '2022-05-20 14:06:09'
+                    nullable: true
+                  modified_by:
+                    type: string
+                    example: '2022-05-20 14:06:09'
+                    nullable: true
+                  category_id:
+                    type: integer
+                    example: 100
+                  title:
+                    type: string
+                    example: New Title
+                  subject:
+                    type: string
+                    example: New Subject
+                  body:
+                    type: string
+                    example: New HTML Body
+                  plainbody:
+                    type: string
+                    example: New Plaintext Body
+                  public:
+                    type: integer
+                    example: 0
+                  created_name:
+                    type: string
+                    example: Joe Bloggs
+                  category_name:
+                    type: string
+                    example: New Category
+                  shared_with:
+                    type: array
+                    items:
+                      type: object
+                  attachments:
+                    type: array
+                    items:
+                      type: object
+              status:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+          examples:
+            Example:
+              value:
+                response:
+                  object: etemplate
+                  id: 86769
+                  acctID: 5
+                  created_at: '2022-05-20 14:06:09'
+                  created_by: 51494
+                  modified_at: null
+                  modified_by: null
+                  category_id: 100
+                  title: New Title
+                  subject: New Subject
+                  body: New HTML Body
+                  plainbody: New Plaintext Body
+                  public: 0
+                  created_name: Joe Bloggs
+                  category_name: Foobar
+                  shared_with: []
+                  attachments: []
                 status:
                   code: 200
   parameters:
