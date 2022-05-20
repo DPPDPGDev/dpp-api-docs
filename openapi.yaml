@@ -3592,6 +3592,21 @@ paths:
           $ref: '#/components/responses/EcampaignsPost_200'
       requestBody:
         $ref: '#/components/requestBodies/EcampaignsPost'
+  '/ecampaigns/templates/{id}/delete':
+    parameters:
+      - schema:
+          type: integer
+          example: 141
+        name: id
+        in: path
+        required: true
+        description: Template ID
+    post:
+      summary: Delete E-Campaign Template
+      operationId: post-ecampaigns-templates-id
+      responses:
+        '200':
+          $ref: '#/components/responses/EcampaignsPost_200'
 components:
   responses:
     POST_200:
