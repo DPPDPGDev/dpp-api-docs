@@ -13,6 +13,7 @@ servers:
     description: Staging1
     x-internal: true
   - url: 'https://staging2-api.debtpaypro.com/v1'
+    x-internal: 'true'
     description: Staging2
   - url: 'https://staging3-api.debtpaypro.com/v1'
     description: Staging3
