@@ -3858,6 +3858,380 @@ paths:
                     status:
                       code: 200
       operationId: get-ecampaigns-can-create
+  '/files/find/{search}':
+    parameters:
+      - schema:
+          type: string
+          example: accounts-index
+        name: search
+        in: path
+        required: true
+        description: Image string to search for
+    get:
+      summary: Search for Files
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    response:
+                      - id: '352'
+                        name: accounts-index
+                      - id: '693'
+                        name: accounts-index 150
+                      - id: '694'
+                        name: accounts-index 650
+                    status:
+                      code: 200
+                properties:
+                  response:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: '352'
+                        name:
+                          type: string
+                          example: accounts-index
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 200
+              examples:
+                Example:
+                  value:
+                    response:
+                      - id: '352'
+                        name: accounts-index
+                      - id: '693'
+                        name: accounts-index 150
+                      - id: '694'
+                        name: accounts-index 650
+                    status:
+                      code: 200
+      operationId: get-files-find-search
+  /files/image-list:
+    parameters: []
+    get:
+      summary: List Image Uploads
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    response:
+                      - id: '352'
+                        name: accounts-index
+                      - id: '693'
+                        name: accounts-index 150
+                      - id: '694'
+                        name: accounts-index 650
+                    status:
+                      code: 200
+                properties:
+                  response:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: '352'
+                        name:
+                          type: string
+                          example: accounts-index
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 200
+              examples:
+                Example:
+                  value:
+                    response:
+                      - id: '352'
+                        name: accounts-index
+                      - id: '693'
+                        name: accounts-index 150
+                      - id: '694'
+                        name: accounts-index 650
+                    status:
+                      code: 200
+        '':
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    response:
+                      - title: accounts-index
+                        value: 'http://www.debtpaypro.com/upload/accounts-index.jpg'
+                      - title: bart
+                        value: httpdocs/upload/bart.png
+                      - title: admin-index
+                        value: 'http://www.debtpaypro.com/upload/admin-index.jpg'
+                      - title: admin-roles
+                        value: 'http://www.debtpaypro.com/upload/admin-roles.jpg'
+                      - title: calendar-index
+                        value: 'http://www.debtpaypro.com/upload/calendar-index.jpg'
+                      - title: calendar-schedule
+                        value: 'http://www.debtpaypro.com/upload/calendar-schedule.jpg'
+                      - title: contacts-add
+                        value: 'http://www.debtpaypro.com/upload/contacts-add.jpg'
+                      - title: contacts-customfields
+                        value: 'http://www.debtpaypro.com/upload/contacts-customfields.jpg'
+                      - title: contacts-datasources
+                        value: 'http://www.debtpaypro.com/upload/contacts-datasources.jpg'
+                      - title: contacts-index
+                        value: 'http://www.debtpaypro.com/upload/contacts-index.jpg'
+                      - title: contacts-listbuilder
+                        value: 'http://www.debtpaypro.com/upload/contacts-listbuilder.jpg'
+                      - title: content-new
+                        value: 'http://www.debtpaypro.com/upload/content-new.jpg'
+                      - title: emarketing-index
+                        value: 'http://www.debtpaypro.com/upload/emarketing-index.jpg'
+                      - title: emarketing-schedule
+                        value: 'http://www.debtpaypro.com/upload/emarketing-schedule.jpg'
+                      - title: files-index
+                        value: 'http://www.debtpaypro.com/upload/files-index.jpg'
+                      - title: files-upload
+                        value: 'http://www.debtpaypro.com/upload/files-upload.jpg'
+                      - title: reports-index
+                        value: 'http://www.debtpaypro.com/upload/reports-index.jpg'
+                      - title: sites-components
+                        value: 'http://www.debtpaypro.com/upload/site-components.jpg'
+                      - title: sites-index
+                        value: 'http://www.debtpaypro.com/upload/sites-index.jpg'
+                      - title: sign-up-btn
+                        value: 'http://www.debtpaypro.com/upload/signup-btn.png'
+                      - title: color-pattern
+                        value: 'http://www.debtpaypro.com/upload/colorpattern.jpg'
+                      - title: icon-time
+                        value: 'http://www.debtpaypro.com/upload/icon-time.jpg'
+                      - title: icon-updates
+                        value: 'http://www.debtpaypro.com/upload/icon-updates.jpg'
+                      - title: icon-collaborate
+                        value: 'http://www.debtpaypro.com/upload/icon-collaborate.jpg'
+                      - title: accounts-index 150
+                        value: 'http://www.debtpaypro.com/upload/accounts-index+150.jpg'
+                      - title: accounts-index 650
+                        value: 'http://www.debtpaypro.com/upload/accounts-index+650.jpg'
+                      - title: accounts-view 150
+                        value: 'http://www.debtpaypro.com/upload/accounts-view+150.jpg'
+                      - title: accounts-view 650
+                        value: 'http://www.debtpaypro.com/upload/accounts-view+650.jpg'
+                      - title: admin-index 150
+                        value: 'http://www.debtpaypro.com/upload/admin-index+150.jpg'
+                      - title: admin-index 650
+                        value: 'http://www.debtpaypro.com/upload/admin-index+650.jpg'
+                      - title: admin-roles 150
+                        value: 'http://www.debtpaypro.com/upload/admin-roles+150.jpg'
+                      - title: admin-roles 650
+                        value: 'http://www.debtpaypro.com/upload/admin-roles+650.jpg'
+                      - title: calendar-index 150
+                        value: 'http://www.debtpaypro.com/upload/calendar-index+150.jpg'
+                      - title: calendar-index 650
+                        value: 'http://www.debtpaypro.com/upload/calendar-index+650.jpg'
+                      - title: calendar-schedule 150
+                        value: 'http://www.debtpaypro.com/upload/calendar-schedule+150.jpg'
+                      - title: calendar-schedule 650
+                        value: 'http://www.debtpaypro.com/upload/calendar-schedule+650.jpg'
+                      - title: contacts-add 150
+                        value: 'http://www.debtpaypro.com/upload/contacts-add+150.jpg'
+                      - title: contacts-add 650
+                        value: 'http://www.debtpaypro.com/upload/contacts-add+650.jpg'
+                      - title: contacts-customfields 150
+                        value: 'http://www.debtpaypro.com/upload/contacts-customfields+150.jpg'
+                      - title: contacts-customfields 650
+                        value: 'http://www.debtpaypro.com/upload/contacts-customfields+650.jpg'
+                      - title: contacts-datasources 150
+                        value: 'http://www.debtpaypro.com/upload/contacts-datasources+150.jpg'
+                      - title: contacts-datasources 650
+                        value: 'http://www.debtpaypro.com/upload/contacts-datasources+650.jpg'
+                      - title: contacts-index 150
+                        value: 'http://www.debtpaypro.com/upload/contacts-index+150.jpg'
+                      - title: contacts-index 650
+                        value: 'http://www.debtpaypro.com/upload/contacts-index+650.jpg'
+                      - title: contacts-listbuilder 150
+                        value: 'http://www.debtpaypro.com/upload/contacts-listbuilder+150.jpg'
+                      - title: contacts-listbuilder 650
+                        value: 'http://www.debtpaypro.com/upload/contacts-listbuilder+650.jpg'
+                      - title: content-new 150
+                        value: 'http://www.debtpaypro.com/upload/content-new+150.jpg'
+                      - title: content-new 650
+                        value: 'http://www.debtpaypro.com/upload/content-new+650.jpg'
+                      - title: emarketing-index 650
+                        value: 'http://www.debtpaypro.com/upload/emarketing-index+650.jpg'
+                      - title: files-index 150
+                        value: 'http://www.debtpaypro.com/upload/files-index+150.jpg'
+                      - title: files-index 650
+                        value: 'http://www.debtpaypro.com/upload/files-index+650.jpg'
+                      - title: files-upload 150
+                        value: 'http://www.debtpaypro.com/upload/files-upload+150.jpg'
+                      - title: files-upload 650
+                        value: 'http://www.debtpaypro.com/upload/files-upload+650.jpg'
+                      - title: reports-index 150
+                        value: 'http://www.debtpaypro.com/upload/reports-index+150.jpg'
+                      - title: reports-index 650
+                        value: 'http://www.debtpaypro.com/upload/reports-index+650.jpg'
+                      - title: site-components 150
+                        value: 'http://www.debtpaypro.com/upload/site-components+150.jpg'
+                      - title: site-components 650
+                        value: 'http://www.debtpaypro.com/upload/site-components+650.jpg'
+                      - title: sites-index 150
+                        value: 'http://www.debtpaypro.com/upload/sites-index+150.jpg'
+                      - title: sites-index 650
+                        value: 'http://www.debtpaypro.com/upload/sites-index+650.jpg'
+                      - title: emarketing-schedule 150
+                        value: 'http://www.debtpaypro.com/upload/emarketing-schedule+150.jpg'
+                      - title: emarketing-schedule 650
+                        value: 'http://www.debtpaypro.com/upload/emarketing-schedule+650.jpg'
+                      - title: BTN-learn-more
+                        value: 'http://www.debtpaypro.com/upload/learn-more.jpg'
+                      - title: videothumb-email
+                        value: 'http://www.debtpaypro.com/upload/videothumb-email.jpg'
+                      - title: videothumb-activity
+                        value: 'http://www.debtpaypro.com/upload/videothumb-activity.jpg'
+                      - title: videothumb-pages
+                        value: 'http://www.debtpaypro.com/upload/videothumb-pages.jpg'
+                      - title: mainheader
+                        value: 'http://www.debtpaypro.com/upload/mainheader.jpg'
+                      - title: sites-medium
+                        value: 'http://www.debtpaypro.com/upload/sites-medium.jpg'
+                      - title: livedemo
+                        value: 'http://www.debtpaypro.com/upload/livedemo.png'
+                      - title: settlements
+                        value: 'http://www.debtpaypro.com/upload/settlements.jpg'
+                      - title: DPG_LOGO
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/DPG_LOGO.JPG'
+                      - title: DebtSettlementMadeEasy2
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/DebtSettlementMadeEasy2.jpg'
+                      - title: ramlogo
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/ramlogo.JPG'
+                      - title: pacificlogo
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/pacificlogo.JPG'
+                      - title: blslogo2
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/blslogo2.JPG'
+                      - title: ChicagoAsphalt2
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/ChicagoAsphalt2.jpg'
+                      - title: ChicagoAsphalt 3
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/ChicagoAsphalt+3.jpg'
+                      - title: dpp-screenshot-header
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/dpp-screenshot-header.jpg'
+                      - title: signuparrow
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/signuparrow.jpg'
+                      - title: check
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/check.jpg'
+                      - title: logo-invert
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/logo-invert.png'
+                      - title: logo-invert
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/logo-invert.png'
+                      - title: header-ss
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/header-ss.jpg'
+                      - title: edirex-logo
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/edirex-logo.jpg'
+                      - title: em-take-a-demo
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/em-take-a-demo.png'
+                      - title: em-top-head
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/em-top-head.png'
+                      - title: em-top-headline
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/em-top-headline.png'
+                      - title: em-icon-cash
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/em-icon-cash.jpg'
+                      - title: em-icon-clock
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/em-icon-clock.jpg'
+                      - title: em-icon-loop
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/em-icon-loop.png'
+                      - title: em-img-status
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/em-img-status.png'
+                      - title: globallogo
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/globallogo.JPG'
+                      - title: dpp-logo
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/dpp-logo.JPG'
+                      - title: dpplogo
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/dpplogo.png'
+                      - title: SS.png
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/upload/httpdocs%2F_temp%2F123-RAMS.pdf'
+                      - title: newdpplogo
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/newdpplogo.jpg'
+                      - title: Student-Loans-Loans
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/Screen+Shot+2014-01-22+at+12.21.17+PM.png'
+                      - title: Student-Loan-Programs-SS
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/Student-Loan-Programs-SS.png'
+                      - title: Student-Loan-Recurring-Payments
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/Student-Loan-Recurring-Payments.png'
+                      - title: DPPLOGO
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/DPPLOGO.jpg'
+                      - title: MRS LOGO
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/MRS+LOGO.jpg'
+                      - title: kkehler-signature
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/kkehler-signature.jpg'
+                      - title: ub-logo
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/ub-logo.png'
+                      - title: Screen Shot 2014-08-26 at 12
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/Screen+Shot+2014-08-26+at+12.18.10+PM.png'
+                      - title: DPGCAA
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/DPGCAA.png'
+                      - title: Screenshot 2015-03-20 14
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/Screenshot_2015-03-20_14.28.33.png'
+                      - title: Email-Marketing-Screen-Shot-Webinar
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/Email-Marketing-Screen-Shot-Webinar.png'
+                      - title: Student-Debt-Portal-Screenshot1
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/Student-Debt-Portal-Screenshot1.png'
+                      - title: Student-Debt-Portal-Screenshot2
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/Student-Debt-Portal-Screenshot2.png'
+                    status:
+                      code: 200
+                properties:
+                  response:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        title:
+                          type: string
+                          example: accounts-index
+                        value:
+                          type: string
+                          example: 'http://www.debtpaypro.com/upload/accounts-index.jpg'
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+              examples:
+                Example:
+                  value:
+                    response:
+                      - title: accounts-index
+                        value: 'http://www.debtpaypro.com/upload/accounts-index.jpg'
+                      - title: bart
+                        value: httpdocs/upload/bart.png
+                      - title: admin-index
+                        value: 'http://www.debtpaypro.com/upload/admin-index.jpg'
+                    status:
+                      code: 200
+            application/xml:
+              schema:
+                type: object
+                properties: {}
+      operationId: get-files-find-search
 components:
   responses:
     POST_200:
