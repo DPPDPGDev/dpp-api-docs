@@ -3607,6 +3607,73 @@ paths:
       responses:
         '522':
           $ref: '#/components/responses/EcampaignsDelete_522'
+  /ecampaigns/categories:
+    get:
+      summary: Get E-Campaign Categories
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    response:
+                      - id: '1'
+                        acctID: '0'
+                        title: Notifications
+                      - id: '2'
+                        acctID: '0'
+                        title: Auto Responders
+                      - id: '3'
+                        acctID: '0'
+                        title: Marketing
+                      - id: '4'
+                        acctID: '0'
+                        title: Trigger
+                    status:
+                      code: 200
+                properties:
+                  response:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: '1'
+                        acctID:
+                          type: string
+                          example: '0'
+                        title:
+                          type: string
+                          example: Notifications
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+              examples:
+                Example:
+                  value:
+                    response:
+                      - id: '1'
+                        acctID: '0'
+                        title: Notifications
+                      - id: '2'
+                        acctID: '0'
+                        title: Auto Responders
+                      - id: '3'
+                        acctID: '0'
+                        title: Marketing
+                      - id: '4'
+                        acctID: '0'
+                        title: Trigger
+                    status:
+                      code: 200
+      operationId: get-ecampaigns-categories
 components:
   responses:
     POST_200:
