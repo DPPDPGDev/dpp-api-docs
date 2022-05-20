@@ -117,7 +117,56 @@ paths:
                   call_disposition: '6'
       responses:
         '200':
-          $ref: '#/components/responses/POST_200'
+          description: Successfully created Call
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  response:
+                    type: object
+                    properties:
+                      id:
+                        type: object
+                        properties:
+                          success:
+                            type: boolean
+                          value:
+                            type: number
+                          messages:
+                            type: array
+                            items:
+                              required: []
+                              properties: {}
+                        required:
+                          - success
+                          - value
+                          - messages
+                    required:
+                      - id
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: number
+                    required:
+                      - code
+                required:
+                  - response
+                  - status
+                x-examples:
+                  example-1:
+                    response:
+                      id:
+                        success: true
+                        value: 443772814
+                        messages: []
+                    status:
+                      code: 200
+              examples:
+                Call_POST_Response_Example:
+                  $ref: '#/components/examples/Call_POST_Response.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/calls/{id}':
