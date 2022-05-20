@@ -3605,8 +3605,8 @@ paths:
       summary: Delete E-Campaign Template
       operationId: post-ecampaigns-templates-id
       responses:
-        '200':
-          $ref: '#/components/responses/EcampaignsPost_200'
+        '522':
+          $ref: '#/components/responses/EcampaignsDelete_522'
 components:
   responses:
     POST_200:
