@@ -3869,7 +3869,8 @@ paths:
         description: Image string to search for
     get:
       summary: Search for Files
-      tags: []
+      tags:
+        - Files
       responses:
         '200':
           description: OK
@@ -3923,7 +3924,8 @@ paths:
     parameters: []
     get:
       summary: List Image Uploads
-      tags: []
+      tags:
+        - Files
       responses:
         '200':
           description: OK
