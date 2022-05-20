@@ -3550,6 +3550,14 @@ paths:
                 $ref: '#/components/examples/Institution.yaml'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+  /ecampaigns/templates:
+    get:
+      summary: Get E-Campaign Templates
+      tags: []
+      responses:
+        '200':
+          description: OK
+      operationId: get-ecampaigns-templates
 components:
   responses:
     POST_200:
@@ -3585,6 +3593,125 @@ components:
                 type: object
               status:
                 $ref: ./models/SuccessStatus.yaml
+    Ecampaigns:
+      description: Example response
+      content:
+        application/json:
+          schema:
+            type: object
+            x-examples:
+              example-1:
+                response:
+                  - object: etemplate
+                    id: '141'
+                    acctID: '5'
+                    created_at: '2009-09-16 14:44:31'
+                    created_by: '19'
+                    modified_at: '2012-12-05 14:35:36'
+                    modified_by: '18888'
+                    category_id: '2'
+                    title: Debt Settlement - 1st Attempt - No Demo
+                    subject: '{FIRSTNAME}, Can we setup a time for a demo'
+                    body: "<!-- @import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500); --> \r\n<table style=\"width: 100%;\" border=\"0\">\r\n<tbody>\r\n<tr>\r\n<td style=\"background:#eaeaea;\">\r\n<table style=\"width: 600px;\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\">\r\n<tbody>\r\n<tr>\r\n<td style=\"padding:15px; background:#001833\"><img title=\"logo-invert\" src=\"http://public.debtpaypro.com/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/logo-invert.png\" alt=\"logo-invert\" width=\"219\" height=\"46\" /></td>\r\n<td style=\"padding: 15px; background-color: #001833; text-align: right; background-position: initial initial; background-repeat: initial initial;\"><span style=\"font-size:16px;color:#ffffff;font-family:Arial;\">support@debtpaypro.com<br />877-800-5577</span></td>\r\n</tr>\r\n<tr>\r\n<td style=\"padding:10px; background:#fff;\" colspan=\"100%\">\r\n<p style=\"text-align: center;\">&nbsp;</p>\r\n<p><span style=\"font-size: medium;\"><span style=\"color: #808080;\">{FIRSTNAME},<br /><br />I left you a message a few minutes ago. I'd love to give you a demo of our platform and show you all the value we can offer your business. Our system is industry leading and encompasses the entire lifecycle of a client from lead through settled client.</span></span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size: medium;\"><span style=\"color: #808080;\">Here is a link to our software brochure.<br /><br /><a style=\"color: #2891b8;\" href=\"http://public.debtpaypro.com/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/dpp-product-overview.pdf\">DebtPayPro Product Brochure</a></span></span></p>\r\n<p><span style=\"font-size: medium;\"><span style=\"color: #808080;\"><br /></span></span></p>\r\n<div style=\"border: 1px solid #cccccc; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; text-align: center; \">\r\n<div style=\"padding:10px;\"><img title=\"dpp-screenshot-header\" src=\"http://public.debtpaypro.com/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/dpp-screenshot-header.jpg\" alt=\"dpp-screenshot-header\" width=\"578\" height=\"248\" />\r\n<p style=\"font-family:'Ubuntu',Arial,sans-serif; font-weight:400; font-size:18px;\"><strong>The Most Powerful And Complete Financial CRM Available<br /></strong><span style=\"font-size: 12px;\">Debt Settlement, Credit Repair, Bankruptcy, Interest Negotiation, Mortgage Defense, Loan Workouts</span></p>\r\n</div>\r\n</div>\r\n<p style=\"text-align: center;\"><br /><br />715 W. Lake Street, Suite 104<br />Addison IL 60101<br />Phone: 877-800-5577 x3 Fax: 800-694-3530<br />support@debtpaypro.com<br /><a href=\"http://www.debtpaypro.com\">www.debtpaypro.com</a></p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>"
+                    plainbody: "Hi {FIRSTNAME},\r\n\r\nI just left you a message about DebtPayPro. I'd like to setup a time that we can give you a demo of the software and answer any questions that you might have. Please give me a call when you can or email me and let me know what time works best for you.\r\n\r\nBest Regards,\r\n\r\nKris Kehler\r\nDeveloper\r\n\r\nCell: 224-629-0142\r\nDirect: 312-348-5125 x710\r\nkkehler@debtpaypro.com"
+                    public: '0'
+                    created_name: Kris Kehler
+                    category_name: Auto Responders
+                    shared_with:
+                      - '0'
+                    attachments: []
+                status:
+                  code: 200
+            properties:
+              response:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    object:
+                      type: string
+                      example: etemplate
+                    id:
+                      type: string
+                      example: '141'
+                    acctID:
+                      type: string
+                      example: '5'
+                    created_at:
+                      type: string
+                      example: '2009-09-16 14:44:31'
+                    created_by:
+                      type: string
+                      example: '19'
+                    modified_at:
+                      type: string
+                      example: '2012-12-05 14:35:36'
+                    modified_by:
+                      type: string
+                      example: '18888'
+                    category_id:
+                      type: string
+                      example: '2'
+                    title:
+                      type: string
+                      example: Debt Settlement - 1st Attempt - No Demo
+                    subject:
+                      type: string
+                      example: '{FIRSTNAME}, Can we setup a time for a demo'
+                    body:
+                      type: string
+                      example: HTML body text
+                    plainbody:
+                      type: string
+                      example: plain body text
+                    public:
+                      type: string
+                      example: '0'
+                    created_name:
+                      type: string
+                      example: Kris Kehler
+                    category_name:
+                      type: string
+                      example: Auto Responders
+                    shared_with:
+                      type: array
+                      items:
+                        type: string
+                        example: '0'
+                    attachments:
+                      type: array
+                      items:
+                        type: object
+              status:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+          examples:
+            Example:
+              value:
+                response:
+                  - object: etemplate
+                    id: '141'
+                    acctID: '5'
+                    created_at: '2009-09-16 14:44:31'
+                    created_by: '19'
+                    modified_at: '2012-12-05 14:35:36'
+                    modified_by: '18888'
+                    category_id: '2'
+                    title: Debt Settlement - 1st Attempt - No Demo
+                    subject: '{FIRSTNAME}, Can we setup a time for a demo'
+                    body: "<!-- @import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500); --> \r\n<table style=\"width: 100%;\" border=\"0\">\r\n<tbody>\r\n<tr>\r\n<td style=\"background:#eaeaea;\">\r\n<table style=\"width: 600px;\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\">\r\n<tbody>\r\n<tr>\r\n<td style=\"padding:15px; background:#001833\"><img title=\"logo-invert\" src=\"http://public.debtpaypro.com/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/logo-invert.png\" alt=\"logo-invert\" width=\"219\" height=\"46\" /></td>\r\n<td style=\"padding: 15px; background-color: #001833; text-align: right; background-position: initial initial; background-repeat: initial initial;\"><span style=\"font-size:16px;color:#ffffff;font-family:Arial;\">support@debtpaypro.com<br />877-800-5577</span></td>\r\n</tr>\r\n<tr>\r\n<td style=\"padding:10px; background:#fff;\" colspan=\"100%\">\r\n<p style=\"text-align: center;\">&nbsp;</p>\r\n<p><span style=\"font-size: medium;\"><span style=\"color: #808080;\">{FIRSTNAME},<br /><br />I left you a message a few minutes ago. I'd love to give you a demo of our platform and show you all the value we can offer your business. Our system is industry leading and encompasses the entire lifecycle of a client from lead through settled client.</span></span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size: medium;\"><span style=\"color: #808080;\">Here is a link to our software brochure.<br /><br /><a style=\"color: #2891b8;\" href=\"http://public.debtpaypro.com/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/dpp-product-overview.pdf\">DebtPayPro Product Brochure</a></span></span></p>\r\n<p><span style=\"font-size: medium;\"><span style=\"color: #808080;\"><br /></span></span></p>\r\n<div style=\"border: 1px solid #cccccc; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; text-align: center; \">\r\n<div style=\"padding:10px;\"><img title=\"dpp-screenshot-header\" src=\"http://public.debtpaypro.com/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/dpp-screenshot-header.jpg\" alt=\"dpp-screenshot-header\" width=\"578\" height=\"248\" />\r\n<p style=\"font-family:'Ubuntu',Arial,sans-serif; font-weight:400; font-size:18px;\"><strong>The Most Powerful And Complete Financial CRM Available<br /></strong><span style=\"font-size: 12px;\">Debt Settlement, Credit Repair, Bankruptcy, Interest Negotiation, Mortgage Defense, Loan Workouts</span></p>\r\n</div>\r\n</div>\r\n<p style=\"text-align: center;\"><br /><br />715 W. Lake Street, Suite 104<br />Addison IL 60101<br />Phone: 877-800-5577 x3 Fax: 800-694-3530<br />support@debtpaypro.com<br /><a href=\"http://www.debtpaypro.com\">www.debtpaypro.com</a></p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>"
+                    plainbody: "Hi {FIRSTNAME},\r\n\r\nI just left you a message about DebtPayPro. I'd like to setup a time that we can give you a demo of the software and answer any questions that you might have. Please give me a call when you can or email me and let me know what time works best for you.\r\n\r\nBest Regards,\r\n\r\nKris Kehler\r\nDeveloper\r\n\r\nCell: 224-629-0142\r\nDirect: 312-348-5125 x710\r\nkkehler@debtpaypro.com"
+                    public: '0'
+                    created_name: Kris Kehler
+                    category_name: Auto Responders
+                    shared_with:
+                      - '0'
+                    attachments: []
+                status:
+                  code: 200
   parameters:
     version:
       name: version
