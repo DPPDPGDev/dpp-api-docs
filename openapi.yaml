@@ -3558,6 +3558,12 @@ paths:
         '200':
           $ref: '#/components/responses/Ecampaigns_200'
       operationId: get-ecampaigns-templates
+    post:
+      summary: Create E-Campaign Template
+      operationId: post-ecampaigns-templates
+      responses:
+        '200':
+          description: OK
   '/ecampaigns/templates/{id}':
     get:
       summary: Get E-Campaign Templates
@@ -3894,6 +3900,71 @@ components:
             $ref: models/TeamRequest.yaml
       description: ''
       required: true
+    EcampaignsPost:
+      content:
+        application/json:
+          schema:
+            type: object
+            x-examples:
+              example-1:
+                category_id: 100
+                title: New Title
+                subject: New Subject
+                body: New HTML Body
+                plainbody: New Plaintext Body
+                public: 0
+                created_name: eric1 bench
+                category_name: ''
+                shared_with: []
+                attachments: []
+            properties:
+              category_id:
+                type: integer
+                example: 100
+              title:
+                type: string
+                example: New Title
+              subject:
+                type: string
+                example: New Subject
+              body:
+                type: string
+                example: New HTML Body
+              plainbody:
+                type: string
+                example: New Plaintext Body
+              public:
+                type: integer
+                example: 0
+              created_name:
+                type: string
+                example: Joe Bloggs
+              category_name:
+                type: string
+                example: New Category
+              shared_with:
+                type: array
+                items:
+                  type: object
+              attachments:
+                type: array
+                items:
+                  type: object
+            required:
+              - category_id
+          examples:
+            Example:
+              value:
+                category_id: 100
+                title: New Title
+                subject: New Subject
+                body: New HTML Body
+                plainbody: New Plaintext Body
+                public: 0
+                created_name: eric1 bench
+                category_name: ''
+                shared_with: []
+                attachments: []
   securitySchemes:
     API-Key:
       type: apiKey
