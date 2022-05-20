@@ -3563,7 +3563,9 @@ paths:
       operationId: post-ecampaigns-templates
       responses:
         '200':
-          description: OK
+          $ref: '#/components/responses/EcampaignsPost_200'
+      requestBody:
+        $ref: '#/components/requestBodies/EcampaignsPost'
   '/ecampaigns/templates/{id}':
     get:
       summary: Get E-Campaign Templates
