@@ -3593,7 +3593,7 @@ components:
                 type: object
               status:
                 $ref: ./models/SuccessStatus.yaml
-    Ecampaigns:
+    Ecampaigns_200:
       description: Example response
       content:
         application/json:
