@@ -3567,6 +3567,8 @@ paths:
           $ref: '#/components/responses/EcampaignsPost_200'
       requestBody:
         $ref: '#/components/requestBodies/EcampaignsPost'
+      tags:
+        - E-Campaigns
   '/ecampaigns/templates/{id}':
     get:
       summary: Get E-Campaign Templates
@@ -3594,6 +3596,8 @@ paths:
           $ref: '#/components/responses/EcampaignsPost_200'
       requestBody:
         $ref: '#/components/requestBodies/EcampaignsPost'
+      tags:
+        - E-Campaigns
   '/ecampaigns/templates/{id}/delete':
     parameters:
       - schema:
