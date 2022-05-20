@@ -3584,6 +3584,14 @@ paths:
         in: path
         required: true
         description: Template ID
+    post:
+      summary: Update E-Campaign Template
+      operationId: post-ecampaigns-templates-id
+      responses:
+        '200':
+          $ref: '#/components/responses/EcampaignsPost_200'
+      requestBody:
+        $ref: '#/components/requestBodies/EcampaignsPost'
 components:
   responses:
     POST_200:
