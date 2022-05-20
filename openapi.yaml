@@ -3553,7 +3553,8 @@ paths:
   /ecampaigns/templates:
     get:
       summary: Get E-Campaign Templates
-      tags: []
+      tags:
+        - E-Campaigns
       responses:
         '200':
           $ref: '#/components/responses/Ecampaigns_200'
@@ -3569,7 +3570,8 @@ paths:
   '/ecampaigns/templates/{id}':
     get:
       summary: Get E-Campaign Templates
-      tags: []
+      tags:
+        - E-Campaigns
       responses:
         '200':
           $ref: '#/components/responses/Ecampaigns_200'
@@ -3607,10 +3609,13 @@ paths:
       responses:
         '522':
           $ref: '#/components/responses/EcampaignsDelete_522'
+      tags:
+        - E-Campaigns
   /ecampaigns/categories:
     get:
       summary: Get E-Campaign Categories
-      tags: []
+      tags:
+        - E-Campaigns
       responses:
         '200':
           description: OK
@@ -3677,7 +3682,8 @@ paths:
   /ecampaigns/share-list:
     get:
       summary: Get E-Campaign Share List
-      tags: []
+      tags:
+        - E-Campaigns
       responses:
         '200':
           description: OK
@@ -3813,7 +3819,8 @@ paths:
   /ecampaigns/can-create:
     get:
       summary: Check E-Campaign Permissions
-      tags: []
+      tags:
+        - E-Campaigns
       responses:
         '200':
           description: OK
