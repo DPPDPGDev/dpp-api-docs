@@ -3558,6 +3558,24 @@ paths:
         '200':
           $ref: '#/components/responses/Ecampaigns_200'
       operationId: get-ecampaigns-templates
+  '/ecampaigns/templates/{id}':
+    get:
+      summary: Get E-Campaign Templates
+      tags: []
+      responses:
+        '200':
+          $ref: '#/components/responses/Ecampaigns_200'
+        '':
+          $ref: '#/components/responses/Ecampaigns_200'
+      operationId: get-ecampaigns-templates
+    parameters:
+      - schema:
+          type: integer
+          example: 141
+        name: id
+        in: path
+        required: true
+        description: Template ID
 components:
   responses:
     POST_200:
