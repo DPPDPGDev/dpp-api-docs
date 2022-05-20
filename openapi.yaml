@@ -3556,7 +3556,7 @@ paths:
       tags: []
       responses:
         '200':
-          description: OK
+          $ref: '#/components/responses/Ecampaigns_200'
       operationId: get-ecampaigns-templates
 components:
   responses:
