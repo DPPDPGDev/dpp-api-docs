@@ -31,9 +31,12 @@ properties:
           enabled:
             type: string
             example: 'true'
+          from_number_id:
+            type: integer
+            example: 123847
           sms_template_id:
-            type: string
-            example: sms_template_id
+            type: integer
+            example: 14833
   signers:
     type: object
     properties:
@@ -43,6 +46,12 @@ properties:
           type:
             type: string
             example: contact
+          email:
+            type: email
+            example: 'test@debtpaypro.com'
+          phone_number:
+            type: string
+            example: '1112223333'
           enabled:
             type: string
             example: 'true'
@@ -51,7 +60,13 @@ properties:
         properties:
           type:
             type: string
-            example: assigneduser
+            example: coapplicant
+          email:
+            type: email
+            example: 'coapp@debtpaypro.com'
+          phone_number:
+            type: string
+            example: '1112223333'
           enabled:
             type: string
             example: 'true'
@@ -61,6 +76,12 @@ properties:
           type:
             type: string
             example: user
+          email:
+            type: email
+            example: 'user@debtpaypro.com'
+          phone_number:
+            type: string
+            example: '1112223333'
           user_id:
             type: string
             example: '123123'

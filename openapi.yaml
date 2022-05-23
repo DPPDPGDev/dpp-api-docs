@@ -1235,16 +1235,7 @@ paths:
               $ref: models/ClixSignDocument.yaml
       responses:
         '200':
-          description: Successfully sent Clixsign Document
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: models/SuccessStatus.yaml
-                required:
-                  - status
+          $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{id}/sms':
