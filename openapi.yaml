@@ -9,8 +9,6 @@ info:
 servers:
   - url: 'https://api.debtpaypro.com/v1'
     description: Production
-  - url: 'https://staging1-api.debtpaypro.com/v1'
-    description: Staging1
 tags:
   - name: Auth
   - name: Calls
