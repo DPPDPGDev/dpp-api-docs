@@ -3548,6 +3548,690 @@ paths:
                 $ref: '#/components/examples/Institution.yaml'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+  /ecampaigns/templates:
+    get:
+      summary: Get E-Campaign Templates
+      tags:
+        - E-Campaigns
+      responses:
+        '200':
+          $ref: '#/components/responses/Ecampaigns_200'
+      operationId: get-ecampaigns-templates
+    post:
+      summary: Create E-Campaign Template
+      operationId: post-ecampaigns-templates
+      responses:
+        '200':
+          $ref: '#/components/responses/EcampaignsPost_200'
+      requestBody:
+        $ref: '#/components/requestBodies/EcampaignsPost'
+      tags:
+        - E-Campaigns
+  '/ecampaigns/templates/{id}':
+    get:
+      summary: Get E-Campaign Templates
+      tags:
+        - E-Campaigns
+      responses:
+        '200':
+          $ref: '#/components/responses/Ecampaigns_200'
+        '':
+          $ref: '#/components/responses/Ecampaigns_200'
+      operationId: get-ecampaigns-templates
+    parameters:
+      - schema:
+          type: integer
+          example: 141
+        name: id
+        in: path
+        required: true
+        description: Template ID
+    post:
+      summary: Update E-Campaign Template
+      operationId: post-ecampaigns-templates-id
+      responses:
+        '200':
+          $ref: '#/components/responses/EcampaignsPost_200'
+      requestBody:
+        $ref: '#/components/requestBodies/EcampaignsPost'
+      tags:
+        - E-Campaigns
+  '/ecampaigns/templates/{id}/delete':
+    parameters:
+      - schema:
+          type: integer
+          example: 141
+        name: id
+        in: path
+        required: true
+        description: Template ID
+    post:
+      summary: Delete E-Campaign Template
+      operationId: post-ecampaigns-templates-id
+      responses:
+        '522':
+          $ref: '#/components/responses/EcampaignsDelete_522'
+      tags:
+        - E-Campaigns
+  /ecampaigns/categories:
+    get:
+      summary: Get E-Campaign Categories
+      tags:
+        - E-Campaigns
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    response:
+                      - id: '1'
+                        acctID: '0'
+                        title: Notifications
+                      - id: '2'
+                        acctID: '0'
+                        title: Auto Responders
+                      - id: '3'
+                        acctID: '0'
+                        title: Marketing
+                      - id: '4'
+                        acctID: '0'
+                        title: Trigger
+                    status:
+                      code: 200
+                properties:
+                  response:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: '1'
+                        acctID:
+                          type: string
+                          example: '0'
+                        title:
+                          type: string
+                          example: Notifications
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+              examples:
+                Example:
+                  value:
+                    response:
+                      - id: '1'
+                        acctID: '0'
+                        title: Notifications
+                      - id: '2'
+                        acctID: '0'
+                        title: Auto Responders
+                      - id: '3'
+                        acctID: '0'
+                        title: Marketing
+                      - id: '4'
+                        acctID: '0'
+                        title: Trigger
+                    status:
+                      code: 200
+      operationId: get-ecampaigns-categories
+  /ecampaigns/share-list:
+    get:
+      summary: Get E-Campaign Share List
+      tags:
+        - E-Campaigns
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    response:
+                      teams:
+                        - id: t_209
+                          name: Test
+                        - id: t_210
+                          name: New Test
+                        - id: t_211
+                          name: Test2
+                        - id: t_212
+                          name: DPP
+                        - id: t_2329
+                          name: TEST
+                        - id: t_2331
+                          name: NNT
+                        - id: t_2332
+                          name: QWE
+                        - id: t_2333
+                          name: eric team
+                        - id: t_2334
+                          name: INSTINCT
+                      users:
+                        - id: '72191'
+                          name: 'Anderlick, Rick'
+                        - id: '51494'
+                          name: 'bench, eric1'
+                        - id: '1854257'
+                          name: 'bench2, eric2'
+                        - id: '3519540'
+                          name: 'bench2, eric2'
+                        - id: '1854258'
+                          name: 'bench3, eric3'
+                        - id: '407'
+                          name: 'Cahue, Juan'
+                        - id: '504853'
+                          name: 'DeMario, Vanessa'
+                        - id: '385282'
+                          name: 'Dorsey, Kaitlyn'
+                        - id: '37002'
+                          name: 'Foster, Adam'
+                        - id: '40432'
+                          name: 'Jones, Jennifer'
+                        - id: '19'
+                          name: 'Kehler, Kris'
+                        - id: '20697'
+                          name: 'Kehler, Kris J'
+                        - id: '17399'
+                          name: 'Kehler, Megan'
+                        - id: '219674'
+                          name: 'King, Kenton'
+                        - id: '467731'
+                          name: 'Olszewski, Adam'
+                        - id: '1854254'
+                          name: 'permissions, no'
+                        - id: '571550'
+                          name: 'Peters, Ramona'
+                        - id: '168416'
+                          name: 'Pyne, Matt'
+                        - id: '544'
+                          name: 'Queen, Chris'
+                        - id: '571560'
+                          name: 'Steidl, Jim'
+                        - id: '2726423'
+                          name: 'test, deve4'
+                        - id: '450886'
+                          name: 'test, deve2'
+                        - id: '505015'
+                          name: 'test, deve3'
+                        - id: '97479'
+                          name: 'test, deve1'
+                        - id: '585478'
+                          name: 'USER, OTHER'
+                        - id: '54806'
+                          name: 'User, Test'
+                        - id: '490024'
+                          name: 'Wheeler, Travis'
+                        - id: '81293'
+                          name: 'Zagal, Aracely'
+                    status:
+                      code: 200
+                properties:
+                  response:
+                    type: object
+                    properties:
+                      teams:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              example: t_209
+                            name:
+                              type: string
+                              example: Test
+                      users:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              example: '72191'
+                            name:
+                              type: string
+                              example: 'Bloggs, Joe'
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+              examples:
+                Example:
+                  value:
+                    response:
+                      teams:
+                        - id: t_209
+                          name: Test
+                      users:
+                        - id: '72191'
+                          name: 'Bloggs, Joe'
+                    status:
+                      code: 200
+      operationId: get-ecampaigns-share-list
+  /ecampaigns/can-create:
+    get:
+      summary: Check E-Campaign Permissions
+      tags:
+        - E-Campaigns
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    response:
+                      permission: true
+                    status:
+                      code: 200
+                properties:
+                  response:
+                    type: object
+                    properties:
+                      permission:
+                        type: boolean
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 200
+              examples:
+                Example:
+                  value:
+                    response:
+                      permission: true
+                    status:
+                      code: 200
+      operationId: get-ecampaigns-can-create
+  '/files/find/{search}':
+    parameters:
+      - schema:
+          type: string
+          example: accounts-index
+        name: search
+        in: path
+        required: true
+        description: Image string to search for
+    get:
+      summary: Search for Files
+      tags:
+        - Files
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    response:
+                      - id: '352'
+                        name: accounts-index
+                      - id: '693'
+                        name: accounts-index 150
+                      - id: '694'
+                        name: accounts-index 650
+                    status:
+                      code: 200
+                properties:
+                  response:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: '352'
+                        name:
+                          type: string
+                          example: accounts-index
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 200
+              examples:
+                Example:
+                  value:
+                    response:
+                      - id: '352'
+                        name: accounts-index
+                      - id: '693'
+                        name: accounts-index 150
+                      - id: '694'
+                        name: accounts-index 650
+                    status:
+                      code: 200
+      operationId: get-files-find-search
+  /files/image-list:
+    parameters: []
+    get:
+      summary: List Image Uploads
+      tags:
+        - Files
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    response:
+                      - id: '352'
+                        name: accounts-index
+                      - id: '693'
+                        name: accounts-index 150
+                      - id: '694'
+                        name: accounts-index 650
+                    status:
+                      code: 200
+                properties:
+                  response:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: '352'
+                        name:
+                          type: string
+                          example: accounts-index
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 200
+              examples:
+                Example:
+                  value:
+                    response:
+                      - id: '352'
+                        name: accounts-index
+                      - id: '693'
+                        name: accounts-index 150
+                      - id: '694'
+                        name: accounts-index 650
+                    status:
+                      code: 200
+        '':
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  example-1:
+                    response:
+                      - title: accounts-index
+                        value: 'http://www.debtpaypro.com/upload/accounts-index.jpg'
+                      - title: bart
+                        value: httpdocs/upload/bart.png
+                      - title: admin-index
+                        value: 'http://www.debtpaypro.com/upload/admin-index.jpg'
+                      - title: admin-roles
+                        value: 'http://www.debtpaypro.com/upload/admin-roles.jpg'
+                      - title: calendar-index
+                        value: 'http://www.debtpaypro.com/upload/calendar-index.jpg'
+                      - title: calendar-schedule
+                        value: 'http://www.debtpaypro.com/upload/calendar-schedule.jpg'
+                      - title: contacts-add
+                        value: 'http://www.debtpaypro.com/upload/contacts-add.jpg'
+                      - title: contacts-customfields
+                        value: 'http://www.debtpaypro.com/upload/contacts-customfields.jpg'
+                      - title: contacts-datasources
+                        value: 'http://www.debtpaypro.com/upload/contacts-datasources.jpg'
+                      - title: contacts-index
+                        value: 'http://www.debtpaypro.com/upload/contacts-index.jpg'
+                      - title: contacts-listbuilder
+                        value: 'http://www.debtpaypro.com/upload/contacts-listbuilder.jpg'
+                      - title: content-new
+                        value: 'http://www.debtpaypro.com/upload/content-new.jpg'
+                      - title: emarketing-index
+                        value: 'http://www.debtpaypro.com/upload/emarketing-index.jpg'
+                      - title: emarketing-schedule
+                        value: 'http://www.debtpaypro.com/upload/emarketing-schedule.jpg'
+                      - title: files-index
+                        value: 'http://www.debtpaypro.com/upload/files-index.jpg'
+                      - title: files-upload
+                        value: 'http://www.debtpaypro.com/upload/files-upload.jpg'
+                      - title: reports-index
+                        value: 'http://www.debtpaypro.com/upload/reports-index.jpg'
+                      - title: sites-components
+                        value: 'http://www.debtpaypro.com/upload/site-components.jpg'
+                      - title: sites-index
+                        value: 'http://www.debtpaypro.com/upload/sites-index.jpg'
+                      - title: sign-up-btn
+                        value: 'http://www.debtpaypro.com/upload/signup-btn.png'
+                      - title: color-pattern
+                        value: 'http://www.debtpaypro.com/upload/colorpattern.jpg'
+                      - title: icon-time
+                        value: 'http://www.debtpaypro.com/upload/icon-time.jpg'
+                      - title: icon-updates
+                        value: 'http://www.debtpaypro.com/upload/icon-updates.jpg'
+                      - title: icon-collaborate
+                        value: 'http://www.debtpaypro.com/upload/icon-collaborate.jpg'
+                      - title: accounts-index 150
+                        value: 'http://www.debtpaypro.com/upload/accounts-index+150.jpg'
+                      - title: accounts-index 650
+                        value: 'http://www.debtpaypro.com/upload/accounts-index+650.jpg'
+                      - title: accounts-view 150
+                        value: 'http://www.debtpaypro.com/upload/accounts-view+150.jpg'
+                      - title: accounts-view 650
+                        value: 'http://www.debtpaypro.com/upload/accounts-view+650.jpg'
+                      - title: admin-index 150
+                        value: 'http://www.debtpaypro.com/upload/admin-index+150.jpg'
+                      - title: admin-index 650
+                        value: 'http://www.debtpaypro.com/upload/admin-index+650.jpg'
+                      - title: admin-roles 150
+                        value: 'http://www.debtpaypro.com/upload/admin-roles+150.jpg'
+                      - title: admin-roles 650
+                        value: 'http://www.debtpaypro.com/upload/admin-roles+650.jpg'
+                      - title: calendar-index 150
+                        value: 'http://www.debtpaypro.com/upload/calendar-index+150.jpg'
+                      - title: calendar-index 650
+                        value: 'http://www.debtpaypro.com/upload/calendar-index+650.jpg'
+                      - title: calendar-schedule 150
+                        value: 'http://www.debtpaypro.com/upload/calendar-schedule+150.jpg'
+                      - title: calendar-schedule 650
+                        value: 'http://www.debtpaypro.com/upload/calendar-schedule+650.jpg'
+                      - title: contacts-add 150
+                        value: 'http://www.debtpaypro.com/upload/contacts-add+150.jpg'
+                      - title: contacts-add 650
+                        value: 'http://www.debtpaypro.com/upload/contacts-add+650.jpg'
+                      - title: contacts-customfields 150
+                        value: 'http://www.debtpaypro.com/upload/contacts-customfields+150.jpg'
+                      - title: contacts-customfields 650
+                        value: 'http://www.debtpaypro.com/upload/contacts-customfields+650.jpg'
+                      - title: contacts-datasources 150
+                        value: 'http://www.debtpaypro.com/upload/contacts-datasources+150.jpg'
+                      - title: contacts-datasources 650
+                        value: 'http://www.debtpaypro.com/upload/contacts-datasources+650.jpg'
+                      - title: contacts-index 150
+                        value: 'http://www.debtpaypro.com/upload/contacts-index+150.jpg'
+                      - title: contacts-index 650
+                        value: 'http://www.debtpaypro.com/upload/contacts-index+650.jpg'
+                      - title: contacts-listbuilder 150
+                        value: 'http://www.debtpaypro.com/upload/contacts-listbuilder+150.jpg'
+                      - title: contacts-listbuilder 650
+                        value: 'http://www.debtpaypro.com/upload/contacts-listbuilder+650.jpg'
+                      - title: content-new 150
+                        value: 'http://www.debtpaypro.com/upload/content-new+150.jpg'
+                      - title: content-new 650
+                        value: 'http://www.debtpaypro.com/upload/content-new+650.jpg'
+                      - title: emarketing-index 650
+                        value: 'http://www.debtpaypro.com/upload/emarketing-index+650.jpg'
+                      - title: files-index 150
+                        value: 'http://www.debtpaypro.com/upload/files-index+150.jpg'
+                      - title: files-index 650
+                        value: 'http://www.debtpaypro.com/upload/files-index+650.jpg'
+                      - title: files-upload 150
+                        value: 'http://www.debtpaypro.com/upload/files-upload+150.jpg'
+                      - title: files-upload 650
+                        value: 'http://www.debtpaypro.com/upload/files-upload+650.jpg'
+                      - title: reports-index 150
+                        value: 'http://www.debtpaypro.com/upload/reports-index+150.jpg'
+                      - title: reports-index 650
+                        value: 'http://www.debtpaypro.com/upload/reports-index+650.jpg'
+                      - title: site-components 150
+                        value: 'http://www.debtpaypro.com/upload/site-components+150.jpg'
+                      - title: site-components 650
+                        value: 'http://www.debtpaypro.com/upload/site-components+650.jpg'
+                      - title: sites-index 150
+                        value: 'http://www.debtpaypro.com/upload/sites-index+150.jpg'
+                      - title: sites-index 650
+                        value: 'http://www.debtpaypro.com/upload/sites-index+650.jpg'
+                      - title: emarketing-schedule 150
+                        value: 'http://www.debtpaypro.com/upload/emarketing-schedule+150.jpg'
+                      - title: emarketing-schedule 650
+                        value: 'http://www.debtpaypro.com/upload/emarketing-schedule+650.jpg'
+                      - title: BTN-learn-more
+                        value: 'http://www.debtpaypro.com/upload/learn-more.jpg'
+                      - title: videothumb-email
+                        value: 'http://www.debtpaypro.com/upload/videothumb-email.jpg'
+                      - title: videothumb-activity
+                        value: 'http://www.debtpaypro.com/upload/videothumb-activity.jpg'
+                      - title: videothumb-pages
+                        value: 'http://www.debtpaypro.com/upload/videothumb-pages.jpg'
+                      - title: mainheader
+                        value: 'http://www.debtpaypro.com/upload/mainheader.jpg'
+                      - title: sites-medium
+                        value: 'http://www.debtpaypro.com/upload/sites-medium.jpg'
+                      - title: livedemo
+                        value: 'http://www.debtpaypro.com/upload/livedemo.png'
+                      - title: settlements
+                        value: 'http://www.debtpaypro.com/upload/settlements.jpg'
+                      - title: DPG_LOGO
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/DPG_LOGO.JPG'
+                      - title: DebtSettlementMadeEasy2
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/DebtSettlementMadeEasy2.jpg'
+                      - title: ramlogo
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/ramlogo.JPG'
+                      - title: pacificlogo
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/pacificlogo.JPG'
+                      - title: blslogo2
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/blslogo2.JPG'
+                      - title: ChicagoAsphalt2
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/ChicagoAsphalt2.jpg'
+                      - title: ChicagoAsphalt 3
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/ChicagoAsphalt+3.jpg'
+                      - title: dpp-screenshot-header
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/dpp-screenshot-header.jpg'
+                      - title: signuparrow
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/signuparrow.jpg'
+                      - title: check
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/check.jpg'
+                      - title: logo-invert
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/logo-invert.png'
+                      - title: logo-invert
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/logo-invert.png'
+                      - title: header-ss
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/header-ss.jpg'
+                      - title: edirex-logo
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/edirex-logo.jpg'
+                      - title: em-take-a-demo
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/em-take-a-demo.png'
+                      - title: em-top-head
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/em-top-head.png'
+                      - title: em-top-headline
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/em-top-headline.png'
+                      - title: em-icon-cash
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/em-icon-cash.jpg'
+                      - title: em-icon-clock
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/em-icon-clock.jpg'
+                      - title: em-icon-loop
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/em-icon-loop.png'
+                      - title: em-img-status
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/em-img-status.png'
+                      - title: globallogo
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/globallogo.JPG'
+                      - title: dpp-logo
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/dpp-logo.JPG'
+                      - title: dpplogo
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/dpplogo.png'
+                      - title: SS.png
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/upload/httpdocs%2F_temp%2F123-RAMS.pdf'
+                      - title: newdpplogo
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/newdpplogo.jpg'
+                      - title: Student-Loans-Loans
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/Screen+Shot+2014-01-22+at+12.21.17+PM.png'
+                      - title: Student-Loan-Programs-SS
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/Student-Loan-Programs-SS.png'
+                      - title: Student-Loan-Recurring-Payments
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/Student-Loan-Recurring-Payments.png'
+                      - title: DPPLOGO
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/DPPLOGO.jpg'
+                      - title: MRS LOGO
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/MRS+LOGO.jpg'
+                      - title: kkehler-signature
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/kkehler-signature.jpg'
+                      - title: ub-logo
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/ub-logo.png'
+                      - title: Screen Shot 2014-08-26 at 12
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/Screen+Shot+2014-08-26+at+12.18.10+PM.png'
+                      - title: DPGCAA
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/DPGCAA.png'
+                      - title: Screenshot 2015-03-20 14
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/Screenshot_2015-03-20_14.28.33.png'
+                      - title: Email-Marketing-Screen-Shot-Webinar
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/Email-Marketing-Screen-Shot-Webinar.png'
+                      - title: Student-Debt-Portal-Screenshot1
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/Student-Debt-Portal-Screenshot1.png'
+                      - title: Student-Debt-Portal-Screenshot2
+                        value: 'https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/Student-Debt-Portal-Screenshot2.png'
+                    status:
+                      code: 200
+                properties:
+                  response:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        title:
+                          type: string
+                          example: accounts-index
+                        value:
+                          type: string
+                          example: 'http://www.debtpaypro.com/upload/accounts-index.jpg'
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+              examples:
+                Example:
+                  value:
+                    response:
+                      - title: accounts-index
+                        value: 'http://www.debtpaypro.com/upload/accounts-index.jpg'
+                      - title: bart
+                        value: httpdocs/upload/bart.png
+                      - title: admin-index
+                        value: 'http://www.debtpaypro.com/upload/admin-index.jpg'
+                    status:
+                      code: 200
+            application/xml:
+              schema:
+                type: object
+                properties: {}
+      operationId: get-files-find-search
 components:
   responses:
     POST_200:
@@ -3583,6 +4267,274 @@ components:
                 type: object
               status:
                 $ref: ./models/SuccessStatus.yaml
+    EcampaignsGet_200:
+      description: Example response
+      content:
+        application/json:
+          schema:
+            type: object
+            x-examples:
+              example-1:
+                response:
+                  - object: etemplate
+                    id: '141'
+                    acctID: '5'
+                    created_at: '2009-09-16 14:44:31'
+                    created_by: '19'
+                    modified_at: '2012-12-05 14:35:36'
+                    modified_by: '18888'
+                    category_id: '2'
+                    title: Debt Settlement - 1st Attempt - No Demo
+                    subject: '{FIRSTNAME}, Can we setup a time for a demo'
+                    body: "<!-- @import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500); --> \r\n<table style=\"width: 100%;\" border=\"0\">\r\n<tbody>\r\n<tr>\r\n<td style=\"background:#eaeaea;\">\r\n<table style=\"width: 600px;\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\">\r\n<tbody>\r\n<tr>\r\n<td style=\"padding:15px; background:#001833\"><img title=\"logo-invert\" src=\"http://public.debtpaypro.com/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/logo-invert.png\" alt=\"logo-invert\" width=\"219\" height=\"46\" /></td>\r\n<td style=\"padding: 15px; background-color: #001833; text-align: right; background-position: initial initial; background-repeat: initial initial;\"><span style=\"font-size:16px;color:#ffffff;font-family:Arial;\">support@debtpaypro.com<br />877-800-5577</span></td>\r\n</tr>\r\n<tr>\r\n<td style=\"padding:10px; background:#fff;\" colspan=\"100%\">\r\n<p style=\"text-align: center;\">&nbsp;</p>\r\n<p><span style=\"font-size: medium;\"><span style=\"color: #808080;\">{FIRSTNAME},<br /><br />I left you a message a few minutes ago. I'd love to give you a demo of our platform and show you all the value we can offer your business. Our system is industry leading and encompasses the entire lifecycle of a client from lead through settled client.</span></span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size: medium;\"><span style=\"color: #808080;\">Here is a link to our software brochure.<br /><br /><a style=\"color: #2891b8;\" href=\"http://public.debtpaypro.com/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/dpp-product-overview.pdf\">DebtPayPro Product Brochure</a></span></span></p>\r\n<p><span style=\"font-size: medium;\"><span style=\"color: #808080;\"><br /></span></span></p>\r\n<div style=\"border: 1px solid #cccccc; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; text-align: center; \">\r\n<div style=\"padding:10px;\"><img title=\"dpp-screenshot-header\" src=\"http://public.debtpaypro.com/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/dpp-screenshot-header.jpg\" alt=\"dpp-screenshot-header\" width=\"578\" height=\"248\" />\r\n<p style=\"font-family:'Ubuntu',Arial,sans-serif; font-weight:400; font-size:18px;\"><strong>The Most Powerful And Complete Financial CRM Available<br /></strong><span style=\"font-size: 12px;\">Debt Settlement, Credit Repair, Bankruptcy, Interest Negotiation, Mortgage Defense, Loan Workouts</span></p>\r\n</div>\r\n</div>\r\n<p style=\"text-align: center;\"><br /><br />715 W. Lake Street, Suite 104<br />Addison IL 60101<br />Phone: 877-800-5577 x3 Fax: 800-694-3530<br />support@debtpaypro.com<br /><a href=\"http://www.debtpaypro.com\">www.debtpaypro.com</a></p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>"
+                    plainbody: "Hi {FIRSTNAME},\r\n\r\nI just left you a message about DebtPayPro. I'd like to setup a time that we can give you a demo of the software and answer any questions that you might have. Please give me a call when you can or email me and let me know what time works best for you.\r\n\r\nBest Regards,\r\n\r\nKris Kehler\r\nDeveloper\r\n\r\nCell: 224-629-0142\r\nDirect: 312-348-5125 x710\r\nkkehler@debtpaypro.com"
+                    public: '0'
+                    created_name: Kris Kehler
+                    category_name: Auto Responders
+                    shared_with:
+                      - '0'
+                    attachments: []
+                status:
+                  code: 200
+            properties:
+              response:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    object:
+                      type: string
+                      example: etemplate
+                    id:
+                      type: string
+                      example: '141'
+                    acctID:
+                      type: string
+                      example: '5'
+                    created_at:
+                      type: string
+                      example: '2009-09-16 14:44:31'
+                    created_by:
+                      type: string
+                      example: '19'
+                    modified_at:
+                      type: string
+                      example: '2012-12-05 14:35:36'
+                    modified_by:
+                      type: string
+                      example: '18888'
+                    category_id:
+                      type: string
+                      example: '2'
+                    title:
+                      type: string
+                      example: Debt Settlement - 1st Attempt - No Demo
+                    subject:
+                      type: string
+                      example: '{FIRSTNAME}, Can we setup a time for a demo'
+                    body:
+                      type: string
+                      example: HTML body text
+                    plainbody:
+                      type: string
+                      example: plain body text
+                    public:
+                      type: string
+                      example: '0'
+                    created_name:
+                      type: string
+                      example: Kris Kehler
+                    category_name:
+                      type: string
+                      example: Auto Responders
+                    shared_with:
+                      type: array
+                      items:
+                        type: string
+                        example: '0'
+                    attachments:
+                      type: array
+                      items:
+                        type: object
+              status:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+          examples:
+            Example:
+              value:
+                response:
+                  - object: etemplate
+                    id: '141'
+                    acctID: '5'
+                    created_at: '2009-09-16 14:44:31'
+                    created_by: '19'
+                    modified_at: '2012-12-05 14:35:36'
+                    modified_by: '18888'
+                    category_id: '2'
+                    title: Debt Settlement - 1st Attempt - No Demo
+                    subject: '{FIRSTNAME}, Can we setup a time for a demo'
+                    body: "<!-- @import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500); --> \r\n<table style=\"width: 100%;\" border=\"0\">\r\n<tbody>\r\n<tr>\r\n<td style=\"background:#eaeaea;\">\r\n<table style=\"width: 600px;\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\">\r\n<tbody>\r\n<tr>\r\n<td style=\"padding:15px; background:#001833\"><img title=\"logo-invert\" src=\"http://public.debtpaypro.com/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/logo-invert.png\" alt=\"logo-invert\" width=\"219\" height=\"46\" /></td>\r\n<td style=\"padding: 15px; background-color: #001833; text-align: right; background-position: initial initial; background-repeat: initial initial;\"><span style=\"font-size:16px;color:#ffffff;font-family:Arial;\">support@debtpaypro.com<br />877-800-5577</span></td>\r\n</tr>\r\n<tr>\r\n<td style=\"padding:10px; background:#fff;\" colspan=\"100%\">\r\n<p style=\"text-align: center;\">&nbsp;</p>\r\n<p><span style=\"font-size: medium;\"><span style=\"color: #808080;\">{FIRSTNAME},<br /><br />I left you a message a few minutes ago. I'd love to give you a demo of our platform and show you all the value we can offer your business. Our system is industry leading and encompasses the entire lifecycle of a client from lead through settled client.</span></span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size: medium;\"><span style=\"color: #808080;\">Here is a link to our software brochure.<br /><br /><a style=\"color: #2891b8;\" href=\"http://public.debtpaypro.com/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/dpp-product-overview.pdf\">DebtPayPro Product Brochure</a></span></span></p>\r\n<p><span style=\"font-size: medium;\"><span style=\"color: #808080;\"><br /></span></span></p>\r\n<div style=\"border: 1px solid #cccccc; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; text-align: center; \">\r\n<div style=\"padding:10px;\"><img title=\"dpp-screenshot-header\" src=\"http://public.debtpaypro.com/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/dpp-screenshot-header.jpg\" alt=\"dpp-screenshot-header\" width=\"578\" height=\"248\" />\r\n<p style=\"font-family:'Ubuntu',Arial,sans-serif; font-weight:400; font-size:18px;\"><strong>The Most Powerful And Complete Financial CRM Available<br /></strong><span style=\"font-size: 12px;\">Debt Settlement, Credit Repair, Bankruptcy, Interest Negotiation, Mortgage Defense, Loan Workouts</span></p>\r\n</div>\r\n</div>\r\n<p style=\"text-align: center;\"><br /><br />715 W. Lake Street, Suite 104<br />Addison IL 60101<br />Phone: 877-800-5577 x3 Fax: 800-694-3530<br />support@debtpaypro.com<br /><a href=\"http://www.debtpaypro.com\">www.debtpaypro.com</a></p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>"
+                    plainbody: "Hi {FIRSTNAME},\r\n\r\nI just left you a message about DebtPayPro. I'd like to setup a time that we can give you a demo of the software and answer any questions that you might have. Please give me a call when you can or email me and let me know what time works best for you.\r\n\r\nBest Regards,\r\n\r\nKris Kehler\r\nDeveloper\r\n\r\nCell: 224-629-0142\r\nDirect: 312-348-5125 x710\r\nkkehler@debtpaypro.com"
+                    public: '0'
+                    created_name: Kris Kehler
+                    category_name: Auto Responders
+                    shared_with:
+                      - '0'
+                    attachments: []
+                status:
+                  code: 200
+    EcampaignsPost_200:
+      description: Example response
+      content:
+        application/json:
+          schema:
+            type: object
+            x-examples:
+              example-1:
+                response:
+                  object: etemplate
+                  id: 86769
+                  acctID: 5
+                  created_at: '2022-05-20 14:06:09'
+                  created_by: 51494
+                  modified_at: null
+                  modified_by: null
+                  category_id: 100
+                  title: New Title
+                  subject: New Subject
+                  body: New HTML Body
+                  plainbody: New Plaintext Body
+                  public: 0
+                  created_name: eric1 bench
+                  category_name: ''
+                  shared_with: []
+                  attachments: []
+                status:
+                  code: 200
+            properties:
+              response:
+                type: object
+                properties:
+                  object:
+                    type: string
+                    example: etemplate
+                  id:
+                    type: integer
+                    example: 86769
+                  acctID:
+                    type: integer
+                    example: 5
+                  created_at:
+                    type: string
+                    example: '2022-05-20 14:06:09'
+                  created_by:
+                    type: integer
+                    example: 51494
+                  modified_at:
+                    type: string
+                    example: '2022-05-20 14:06:09'
+                    nullable: true
+                  modified_by:
+                    type: string
+                    example: '2022-05-20 14:06:09'
+                    nullable: true
+                  category_id:
+                    type: integer
+                    example: 100
+                  title:
+                    type: string
+                    example: New Title
+                  subject:
+                    type: string
+                    example: New Subject
+                  body:
+                    type: string
+                    example: New HTML Body
+                  plainbody:
+                    type: string
+                    example: New Plaintext Body
+                  public:
+                    type: integer
+                    example: 0
+                  created_name:
+                    type: string
+                    example: Joe Bloggs
+                  category_name:
+                    type: string
+                    example: New Category
+                  shared_with:
+                    type: array
+                    items:
+                      type: object
+                  attachments:
+                    type: array
+                    items:
+                      type: object
+              status:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 200
+          examples:
+            Example:
+              value:
+                response:
+                  object: etemplate
+                  id: 86769
+                  acctID: 5
+                  created_at: '2022-05-20 14:06:09'
+                  created_by: 51494
+                  modified_at: null
+                  modified_by: null
+                  category_id: 100
+                  title: New Title
+                  subject: New Subject
+                  body: New HTML Body
+                  plainbody: New Plaintext Body
+                  public: 0
+                  created_name: Joe Bloggs
+                  category_name: Foobar
+                  shared_with: []
+                  attachments: []
+                status:
+                  code: 200
+    EcampaignsDelete_522:
+      description: Example response
+      content:
+        application/json:
+          schema:
+            type: object
+            x-examples:
+              example-1:
+                status:
+                  code: 522
+                  message: Delete is not implemented
+                response: []
+            properties:
+              status:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 522
+                  message:
+                    type: string
+                    example: Delete is not implemented
+              response:
+                type: array
+                items:
+                  type: object
+          examples:
+            Example:
+              value:
+                status:
+                  code: 522
+                  message: Delete is not implemented
+                response: []
   parameters:
     version:
       name: version
@@ -3747,6 +4699,71 @@ components:
             $ref: models/TeamRequest.yaml
       description: ''
       required: true
+    EcampaignsPost:
+      content:
+        application/json:
+          schema:
+            type: object
+            x-examples:
+              example-1:
+                category_id: 100
+                title: New Title
+                subject: New Subject
+                body: New HTML Body
+                plainbody: New Plaintext Body
+                public: 0
+                created_name: eric1 bench
+                category_name: ''
+                shared_with: []
+                attachments: []
+            properties:
+              category_id:
+                type: integer
+                example: 100
+              title:
+                type: string
+                example: New Title
+              subject:
+                type: string
+                example: New Subject
+              body:
+                type: string
+                example: New HTML Body
+              plainbody:
+                type: string
+                example: New Plaintext Body
+              public:
+                type: integer
+                example: 0
+              created_name:
+                type: string
+                example: Joe Bloggs
+              category_name:
+                type: string
+                example: New Category
+              shared_with:
+                type: array
+                items:
+                  type: object
+              attachments:
+                type: array
+                items:
+                  type: object
+            required:
+              - category_id
+          examples:
+            Example:
+              value:
+                category_id: 100
+                title: New Title
+                subject: New Subject
+                body: New HTML Body
+                plainbody: New Plaintext Body
+                public: 0
+                created_name: eric1 bench
+                category_name: ''
+                shared_with: []
+                attachments: []
   securitySchemes:
     API-Key:
       type: apiKey
