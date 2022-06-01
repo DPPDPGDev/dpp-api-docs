@@ -1276,7 +1276,7 @@ paths:
               properties:
                 from_number_id:
                   type: integer
-                  example: 12448
+                  example: 12442
                 message:
                   type: object
                   properties:
@@ -1298,7 +1298,7 @@ paths:
             examples:
               POST Example:
                 value:
-                  from_number_id: 12448
+                  from_number_id: 12442
                   message:
                     message_template: 15223
                     message_text: lorem ipsum
